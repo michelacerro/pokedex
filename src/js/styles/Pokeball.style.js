@@ -12,6 +12,19 @@ export const PokeballBox = styled.div`
     border-radius: 50%;
     overflow: hidden;
     // transform-origin: 100% 100%;
+    animation: wobble 5s infinite;
+
+    @keyframes wobble {
+        0%, 20%, 24%, 28%, 80%, 84%, 88%,92%, 96%, 100% {
+            transform: rotate(0deg);
+        } 
+        22%, 82%, 90% {
+            transform: rotate(4deg);
+        } 
+        26%, 86%, 94% {
+            transform: rotate(-4deg);
+        } 
+    }
 `;
 
 export const PokeballTop = styled.div`
@@ -74,6 +87,18 @@ export const PokeballBorderCenter = styled.div`
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 0.5px solid #4F4C59;
+    border: 1px solid #CAC7D9;
     transform: translate(-50%, -50%);
+`;
+
+export const PokeballShadow = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 250px;
+    height: 70px;
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -2;
 `;
