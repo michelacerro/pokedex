@@ -8,6 +8,9 @@ import {GlobalBox, ColumnBox, GeneralBox, BoxTitle} from '../styles/Containers.s
 import {TypeBox, Type} from '../styles/Types.style';
 import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
 
+// Components
+// import Identifiers from '../components/Identifiers';
+
 
 const PokemonCard = () => {
     const {name} = useParams();
@@ -24,8 +27,6 @@ const PokemonCard = () => {
         fetchData()
     }, [url]);
 
-    // const id = pokemonData.id.toString();
-
     return (
         <GlobalBox>
             <ColumnBox width='fifty'>
@@ -34,9 +35,7 @@ const PokemonCard = () => {
                         {/* <img src={pokemonData.sprites.front_default} alt={name} /> */}
                     </ColumnBox>
                     <ColumnBox width='full'>
-                        {/* <h4># {id.length === 1 ? ('00' + id) : (id.length === 2 ? ('0' + id) : id)}</h4> */}
-                        <br />
-                        <h1>{pokemonData.name}</h1>
+                        {/* <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} /> */}
                     </ColumnBox>
                 </ColumnBox>
                 

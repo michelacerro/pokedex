@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 
-export const PokeballBox = styled.div`
+export const AnimatedPokeballBox = styled.div`
     position: absolute;
     bottom: 7%;
     left: 7%;
@@ -11,9 +11,8 @@ export const PokeballBox = styled.div`
     height: 250px;
     border-radius: 50%;
     overflow: hidden;
-    // transform-origin: 100% 100%;
+    
     animation: wobble 5s infinite;
-
     @keyframes wobble {
         0%, 20%, 24%, 28%, 80%, 84%, 88%,92%, 96%, 100% {
             transform: rotate(0deg);
@@ -25,6 +24,15 @@ export const PokeballBox = styled.div`
             transform: rotate(-4deg);
         }
     }
+`;
+
+export const StaticPokeballBox = styled.div`
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
 `;
 
 export const PokeballTop = styled.div`
@@ -51,8 +59,9 @@ export const PokeballDarkCenter = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 90px;
-    height: 90px;
+
+    width: 36%;
+    height: 36%;
     border-radius: 50%;
     background-color: #4F4C59;
     transform: translate(-50%, -50%);
@@ -63,7 +72,7 @@ export const PokeballMiddle = styled.div`
     top: 50%;
     left: 0;
     width: 100%;
-    height: 25px;
+    height: 10%;
     transform: translateY(-50%);
     background-color: #4F4C59;
 `;
@@ -72,8 +81,8 @@ export const PokeballLightCenter = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 55px;
-    height: 55px;
+    width: 22%;
+    height: 22%;
     border-radius: 50%;
     background: linear-gradient(to right, #F2F2F2, #CAC7D9);
     transform: translate(-50%, -50%);
@@ -83,8 +92,8 @@ export const PokeballBorderCenter = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 35px;
-    height: 35px;
+    width: 14%;
+    height: 14%;
     border-radius: 50%;
     border: 1px solid #CAC7D9;
     transform: translate(-50%, -50%);
@@ -95,7 +104,7 @@ export const PokeballShadow = styled.div`
     bottom: 0;
     left: 7%;
     width: 250px;
-    height: 70px;
+    height: 28%;
     background: rgb(0, 0, 0, 0.5);
     border-radius: 50%;
     filter: blur(15px);

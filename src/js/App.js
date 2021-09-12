@@ -9,6 +9,8 @@ import GlobalStyle from './styles/GlobalStyle.style';
 import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
 import PokemonCard from './pages/PokemonCard';
+import MyTeam from './pages/MyTeam';
+
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/pokedex' component={Pokedex} />
           <Route exact path='/pokemon/:name' component={PokemonCard} />
+          <Route exact path='/my-team' component={MyTeam} />
         </Switch>
         <GlobalStyle />
       </Browser>

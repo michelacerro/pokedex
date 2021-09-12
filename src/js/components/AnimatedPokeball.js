@@ -2,22 +2,22 @@
 import React from 'react';
 
 // Styles
-import {PokeballBox, PokeballTop, PokeballBottom, PokeballDarkCenter, PokeballMiddle, PokeballLightCenter, PokeballBorderCenter, PokeballShadow} from '../styles/Pokeball.style';
+import {AnimatedPokeballBox, PokeballTop, PokeballBottom, PokeballDarkCenter, PokeballMiddle, PokeballLightCenter, PokeballBorderCenter, PokeballShadow} from '../styles/Pokeball.style';
 
 
-const Pokeball = () => {
+const AnimatedPokeball = () => {
     return (
         <>
-        <PokeballBox> 
+        <AnimatedPokeballBox> 
             <PokeballTop />
             <PokeballBottom />
             <PokeballDarkCenter />
             <PokeballMiddle />
             <PokeballLightCenter />
             <PokeballBorderCenter />
-        </PokeballBox>
+        </AnimatedPokeballBox>
         <PokeballShadow />
         </>
     )
 };
-export default Pokeball;
+export default AnimatedPokeball;
