@@ -23,7 +23,7 @@ export const PokeballBox = styled.div`
         } 
         26%, 86%, 94% {
             transform: rotate(-4deg);
-        } 
+        }
     }
 `;
 
@@ -35,7 +35,6 @@ export const PokeballTop = styled.div`
     width: 100%;
     height: 50%;
     background: linear-gradient(to right, #D9436B, #73162F);
-    z-index: 0;
 `;
 
 export const PokeballBottom = styled.div`
@@ -100,5 +99,5 @@ export const PokeballShadow = styled.div`
     background: rgb(0, 0, 0, 0.5);
     border-radius: 50%;
     filter: blur(15px);
-    z-index: -2;
+    z-index: -1;
 `;

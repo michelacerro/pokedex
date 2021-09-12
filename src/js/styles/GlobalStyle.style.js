@@ -1,6 +1,7 @@
 // Dependencies
 import {createGlobalStyle} from 'styled-components';
 
+
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
@@ -9,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Roboto', sans-serif;
+        color: #4F4C59;
     }
 
 
@@ -19,10 +21,11 @@ const GlobalStyle = createGlobalStyle`
 
     h3 {
         font-family: 'Press Start 2P', cursive;
+        color: #F2B705;
     }
 
     h4 {
-        color: violet;
+        color: #3F61A6;
         font-weight: bold;
         text-align: right;
     }

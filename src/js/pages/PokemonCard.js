@@ -4,8 +4,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 
 // Styles
-import {ColumnBox, Column} from '../styles/Column.style';
-import {InfoBox, InfoLabel} from '../styles/Box.style';
+import {GlobalBox, ColumnBox, GeneralBox, BoxTitle} from '../styles/Containers.style';
 import {TypeBox, Type} from '../styles/Types.style';
 import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
 
@@ -20,87 +19,79 @@ const PokemonCard = () => {
             const response = await axios.get(url)
                 .catch(error => alert(error));
             setPokemonData(response.data);
-            console.log(response.data);
+            console.log(response.data.sprites.other);
         }
         fetchData()
     }, [url]);
 
-
+    // const id = pokemonData.id.toString();
 
     return (
-        <div>
-            <header>
-                {/* <h5>#{pokemonData.id.length === 1 ? ('00' + pokemonData.id) : (pokemonData.id.length === 2 ? ('0' + pokemonData.id) : pokemonData.id)}</h5> */}
-                <h1>{pokemonData.name}</h1>
-                {console.log(pokemonData)}
-            </header>
-
-            <ColumnBox>
-                <Column>
-                    {/* <img src={pokemonData.sprites.front_default} alt={name} /> */}
-
-                    <InfoBox>
-                        <InfoLabel>Characteristics</InfoLabel>
-                        <h2>Height</h2> <p>{pokemonData.height / 10} m</p>
+        <GlobalBox>
+            <ColumnBox width='fifty'>
+                <ColumnBox width='full'>
+                    <ColumnBox width='full'>
+                        {/* <img src={pokemonData.sprites.front_default} alt={name} /> */}
+                    </ColumnBox>
+                    <ColumnBox width='full'>
+                        {/* <h4># {id.length === 1 ? ('00' + id) : (id.length === 2 ? ('0' + id) : id)}</h4> */}
                         <br />
-                        <h2>Weight</h2> <p>{pokemonData.weight / 10} kg</p>
-                        <br />
-                        <h2>Base experience</h2> <p>{pokemonData.base_experience }</p>
-                    </InfoBox>
-                </Column>    
-                    
-                <Column>
-                    {/* TYPES */}
-                    <InfoBox>
-                        <InfoLabel>types</InfoLabel>
-                        <TypeBox>
-                            {pokemonData.types ? 
-                                pokemonData.types.map(type => (
-                                    <Type key={type.type.name} type={type.type.name}>{type.type.name}</Type>
-                                ))
-                                : <div></div>
-                            }
-                        </TypeBox>
-                    </InfoBox>
+                        <h1>{pokemonData.name}</h1>
+                    </ColumnBox>
+                </ColumnBox>
+                
 
-                    {/* ABILITIES */}
-                    <InfoBox>
-                        <InfoLabel>abilities</InfoLabel>
-                        {pokemonData.abilities ?
-                            pokemonData.abilities.map(ability => (
-                                <div key={ability.ability.name}>{ability.ability.name}</div>
-                            ))
-                            : <div></div>  
-                        }
-                    </InfoBox>
-
-                    {/* MOVES */}
-                    {/* moves:
-                    {pokemonData.moves ?
-                        pokemonData.moves.map(move => (
-                            <div key={move.move.name}>{move.move.name}</div>
-                        ))
-                        : <div></div>  
-                    }
-                    <hr /> */}
-
-                    {/* STATS */}
-                    <InfoBox>
-                        <InfoLabel>stats</InfoLabel>
-                        {pokemonData.stats ?
-                            pokemonData.stats.map(stat => (
-                                <StatBox key={stat.stat.name}>
-                                    <StatLabel>{stat.stat.name}</StatLabel>
-                                    <StatBar>
-                                        <StatLevel stat={stat.base_stat}></StatLevel>
-                                    </StatBar>
-                                </StatBox>
+                <GeneralBox type='info'>
+                    <BoxTitle>info</BoxTitle>
+                    <h2>Height</h2> <p>{pokemonData.height / 10} m</p>
+                    <br />
+                    <h2>Weight</h2> <p>{pokemonData.weight / 10} kg</p>
+                    <br />
+                    <h2>Base experience</h2> <p>{pokemonData.base_experience }</p>
+                </GeneralBox>
+            </ColumnBox>    
+                
+            <ColumnBox width='fifty'>
+                {/* TYPES */}
+                <GeneralBox type='info'>
+                    <BoxTitle>types</BoxTitle>
+                    <TypeBox>
+                        {pokemonData.types ? 
+                            pokemonData.types.map(type => (
+                                <Type key={type.type.name} type={type.type.name}>{type.type.name}</Type>
                             ))
                             : <div></div>
                         }
-                    </InfoBox>
-                </Column>
+                    </TypeBox>
+                </GeneralBox>
+
+                {/* ABILITIES */}
+                <GeneralBox type='info'>
+                    <BoxTitle>abilities</BoxTitle>
+                    {pokemonData.abilities ?
+                        pokemonData.abilities.map(ability => (
+                            <div key={ability.ability.name}>{ability.ability.name}</div>
+                        ))
+                        : <div></div>  
+                    }
+                </GeneralBox>
+
+                {/* STATS */}
+                <GeneralBox type='info'>
+                    <BoxTitle>stats</BoxTitle>
+                    {pokemonData.stats ?
+                        pokemonData.stats.map(stat => (
+                            <StatBox key={stat.stat.name}>
+                                <StatLabel>{stat.stat.name}</StatLabel>
+                                <StatBar>
+                                    <StatLevel stat={stat.base_stat}></StatLevel>
+                                </StatBar>
+                            </StatBox>
+                        ))
+                        : <div></div>
+                    }
+                </GeneralBox>
             </ColumnBox>
-        </div>
+        </GlobalBox>
     );
 };export default PokemonCard;

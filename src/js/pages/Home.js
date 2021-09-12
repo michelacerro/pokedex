@@ -6,15 +6,19 @@ import {Link} from 'react-router-dom';
 import Button from '../components/Button';
 import Pokeball from '../components/Pokeball';
 
+// Styles
+import {HomePage, PageTitle} from '../styles/Pages.style';
+
+
 const Home = () => {
     return (
-        <div>
-            <h1>home</h1>
+        <HomePage>
+            <PageTitle>Pokemon</PageTitle>
             <Link to='/pokedex'>
                 <Button text='Pokedex'></Button>
             </Link>
             <Pokeball />
-        </div>
+        </HomePage>
     )
 };
 export default Home;
