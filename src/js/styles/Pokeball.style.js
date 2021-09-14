@@ -27,7 +27,7 @@ export const AnimatedPokeballBox = styled.div`
 `;
 
 export const StaticPokeballBox = styled.div`
-    position: absolute;
+    position: relative;
 
     width: 120px;
     height: 120px;

@@ -38,8 +38,7 @@ export const GeneralBox = styled.div`
     margin: var(${props => ('--' + props.type + '-margin')});
     padding: var(${props => ('--' + props.type + '-padding')});
 
-    // background-color: #F2F2F2;
-    background-color: #CAC7D9;
+    background-color: #f2f2f2;
     border-radius: 10px;
 `;
 

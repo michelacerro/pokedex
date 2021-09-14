@@ -9,6 +9,7 @@ import {deletePokemon} from '../actions';
 import Identifiers from './Identifiers';
 
 // Styles
+import {PokemonTeam} from '../styles/PokemonTeam.style';
 import {Button} from '../styles/Buttons.style';
 
 
@@ -20,11 +21,11 @@ const TeamFullElement = (props) => {
     };
 
     return (
-        <>
+        <PokemonTeam>
             <img src={props.data.image} alt={props.data.name} />
             <Identifiers id={props.data.id} name={props.data.name} />
-            <Button onClick={outMyTeam}>Delete Pokémon from my Team</Button>
-        </>
+            <Button id={props.data.id} onClick={outMyTeam}>Delete Pokémon from my Team</Button>
+        </PokemonTeam>
     );
 };
 export default TeamFullElement;

@@ -8,7 +8,7 @@ export const addPokemon = (object) => {
 
 export const deletePokemon = (string) => {
     return {
-        typre: 'DELETE_POKEMON',
+        type: 'DELETE_POKEMON',
         id: string
     }
 }

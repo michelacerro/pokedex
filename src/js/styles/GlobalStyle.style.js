@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Roboto', sans-serif;
         color: #4F4C59;
+
     }
 
 
@@ -33,8 +34,8 @@ const GlobalStyle = createGlobalStyle`
    
     // IMAGE
     img {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
     }
 
 `;

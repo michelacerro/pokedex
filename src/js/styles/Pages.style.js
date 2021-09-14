@@ -14,10 +14,21 @@ export const HomePage = styled.div`
 
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
 
     padding-top: 20vh;
 
     background: radial-gradient(#CAC7D9, transparent);
+`;
+
+export const TeamPage = styled.div`
+    width: 90vw;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f2f2f2;
 `;

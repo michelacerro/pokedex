@@ -1,7 +1,7 @@
 // Dependecies
 import React, {useState, useEffect} from 'react';
 import {useParams, useHistory} from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import axios from 'axios';
 
 // Styles
@@ -44,8 +44,6 @@ const PokemonCard = () => {
         history.push('/my-team');
     }
 
-    const teamList = useSelector(state => state.teamReducer.pokemon);
-    console.log(teamList);
 
     return (
         <GlobalBox>
