@@ -1,15 +1,20 @@
 // Dependecies
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
 
 // Styles
 import {GlobalBox, ColumnBox, GeneralBox, BoxTitle} from '../styles/Containers.style';
 import {TypeBox, Type} from '../styles/Types.style';
 import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
+import {Button} from '../styles/Buttons.style';
 
 // Components
 // import Identifiers from '../components/Identifiers';
+
+// Actions
+import {addPokemon} from '../actions';
 
 
 const PokemonCard = () => {
@@ -22,17 +27,32 @@ const PokemonCard = () => {
             const response = await axios.get(url)
                 .catch(error => alert(error));
             setPokemonData(response.data);
-            console.log(response.data.sprites.other);
         }
         fetchData()
     }, [url]);
+
+    
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const inMyTeam = () => {
+        dispatch(addPokemon({
+            id: pokemonData.id.toString(),
+            name: pokemonData.name,
+            image: pokemonData.sprites.other.dream_world.front_default
+        }));
+        history.push('/my-team');
+    }
+
+    const teamList = useSelector(state => state.teamReducer.pokemon);
+    console.log(teamList);
 
     return (
         <GlobalBox>
             <ColumnBox width='fifty'>
                 <ColumnBox width='full'>
                     <ColumnBox width='full'>
-                        {/* <img src={pokemonData.sprites.front_default} alt={name} /> */}
+                        {/* <img src={pokemonData.sprites.other.dream_world.front_default} alt={name} /> */}
                     </ColumnBox>
                     <ColumnBox width='full'>
                         {/* <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} /> */}
@@ -90,6 +110,7 @@ const PokemonCard = () => {
                         : <div></div>
                     }
                 </GeneralBox>
+                <Button onClick={inMyTeam}>Add Pokémon to my Team</Button>
             </ColumnBox>
         </GlobalBox>
     );

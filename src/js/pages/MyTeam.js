@@ -1,20 +1,28 @@
 // Dependencies
 import React from 'react';
-
-// Styles
-import {Button} from '../styles/Buttons.style';
+import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 // Components
-import StaticPokeball from '../components/StaticPokeball';
-import Identifiers from '../components/Identifiers';
+import TeamFullElement from '../components/TeamFullElement';
+import TeamEmptyElement from '../components/TeamEmptyElement';
 
 
 const MyTeam = () => {
+    const teamList = useSelector(state => state.teamReducer.pokemon);
+
     return (
         <>
-        <StaticPokeball />
-        <Identifiers id={'0'} name={'prova'} />
-        <Button>Delete</Button>
+        {teamList.length === 0 ? 
+            <TeamEmptyElement /> 
+            : 
+            <div>
+                {teamList.map(team => (
+                    <TeamFullElement key={team.id} data={team} />
+                ))}
+            </div>
+        }
+        <Link to='/pokedex'>Pokédex</Link>
         </>
     );
 };

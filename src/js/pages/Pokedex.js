@@ -12,7 +12,7 @@ import {GlobalBox, ColumnBox} from '../styles/Containers.style';
 
 
 const Pokedex = () => {
-    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`;
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`;
     const [pokemonList, setPokemonList] = useState([]);
 
     useEffect(() => {
