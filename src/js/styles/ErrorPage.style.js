@@ -85,7 +85,11 @@ export const ErrorTyping2 = styled.div`
 
 export const ErrorLink = styled(Link)`
     text-decoration: none;
-    color: #F2B705;
+    color: #3F61A6;
+
+    &:hover {
+        color: #F2B705;
+    }
 `;
 
 export const ErrorImage = styled.img`
