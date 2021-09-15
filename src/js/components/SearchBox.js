@@ -4,6 +4,10 @@ import axios from 'axios';
 
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
+import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes} from '../styles/Search.style';
+
+// Icons
+import {FiFilter, FiX} from 'react-icons/fi';
 
 
 const SearchBox = () => {
@@ -19,14 +23,44 @@ const SearchBox = () => {
         typeData()
     }, [url]);
 
+
+    const [open, setOpen] = useState(false);
+
+    const openFilters = () => {
+        setOpen(true);
+        document.querySelector('#filter-box').style.display = 'flex';
+    };
+
+    const closeFilters = () => {
+        setOpen(false);
+        document.querySelector('#filter-box').style.display = 'none';
+    }
+
+
     return (
         <div>
-            <input type='text' />
+            <SearchButton onClick={openFilters}>
+                <FiFilter />
+            </SearchButton>
+            <FilterBox id='filter-box'>
+                <ExitBox>
+                    <SearchButton onClick={closeFilters}>
+                        <FiX />
+                    </SearchButton>
+                </ExitBox>
 
-            {/* TYPE FILTER */}
-            <TypeBox >
-                {typeList.map(type => <Type key={type.name} type={type.name}>{type.name}</Type>)} 
-            </TypeBox>
+                {/* INPUT */}
+                <FilterTitle>Search for name</FilterTitle>
+                <FilterInput type='text' />
+
+                {/* TYPES FILTER */}
+                <FilterTitle>Search for type</FilterTitle>
+                <FilterTypes>
+                    <TypeBox >
+                        {typeList.map(type => <Type key={type.name} type={type.name}>{type.name}</Type>)} 
+                    </TypeBox>
+                </FilterTypes>
+            </FilterBox>
         </div>
     );    
 };

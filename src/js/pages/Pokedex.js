@@ -8,7 +8,7 @@ import SearchBox from '../components/SearchBox';
 import PreviewCard from '../components/PreviewCard';
 
 // Styles
-import {GlobalBox, ColumnBox} from '../styles/Containers.style';
+import {PokedexPage, ExtraBox, MainBox} from '../styles/PokedexPage.style';
 
 
 const Pokedex = () => {
@@ -34,19 +34,19 @@ const Pokedex = () => {
 
 
     return (
-        <GlobalBox>
-            <ColumnBox width='thirty'>
+        <PokedexPage>
+            <ExtraBox>
                 <Menu />
                 <SearchBox />
-            </ColumnBox>
-            <ColumnBox width='seventy'>
+            </ExtraBox>
+            <MainBox>
                 {pokemonList.map(pokemon => {
                     return (
                         <PreviewCard key={pokemon.id} data={pokemon} />
                     )})
                 }
-            </ColumnBox>
-        </GlobalBox>
+            </MainBox>
+        </PokedexPage>
     );
 };
 export default Pokedex;

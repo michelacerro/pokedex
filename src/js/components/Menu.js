@@ -2,11 +2,11 @@
 import React, {useState} from 'react';
 
 // Icons
-import {FiPlus, FiMinus} from 'react-icons/fi';
+import {FiMenu, FiMinus} from 'react-icons/fi';
 import {MdMoreHoriz} from 'react-icons/md';
 
 // Styles
-import {MenuButton, MenuBox, MenuIcon, MenuLink} from '../styles/Menu.style';
+import {MenuButton, MenuBox, MenuLink} from '../styles/Menu.style';
 
 
 const Menu = () => {
@@ -22,7 +22,8 @@ const Menu = () => {
     return (
         <>
             <MenuButton onClick={showMenu}>
-                {open ? <MenuIcon><FiMinus /></MenuIcon> : <MenuIcon><FiPlus /></MenuIcon>}Menu</MenuButton>
+                {open ? <FiMinus /> : <FiMenu />}
+            </MenuButton>
             <MenuBox id='menu-box'>
                 <MenuLink to='/'>Home</MenuLink>
                 <MdMoreHoriz />

@@ -6,31 +6,18 @@ import {Link} from 'react-router-dom';
 export const MenuButton = styled.button`
     border: none;
     background-color: transparent;
-    color: #F2B705;
-    text-shadow: 2px 2px #3F61A6, -2px 2px #3F61A6, -2px -2px #3F61A6, 2px -2px #3F61A6,
-                2px 0px #3F61A6, -2px 0px #3F61A6, 0px 2px #3F61A6, 0px -2px #3F61A6;
-
-    font-family: 'Press Start 2P', cursive;
+    color: #3F61A6;
     font-size: 25px;
     padding: 15px;
-    text-transform: uppercase;
 
-    display: flex;
-    align-items: center;
+
+    // display: flex;
+    // align-items: center;
     
     &:hover {
         cursor: pointer;
+        color: #F2B705;
     }
-
-    // border: 1px solid black;
-`;
-
-export const MenuIcon = styled.span`
-    padding-right: 10px;    
-    // font-size: 25px;
-    color: #3F61A6;
-
-    // border: 1px solid black;
 `;
 
 export const MenuBox = styled.div`

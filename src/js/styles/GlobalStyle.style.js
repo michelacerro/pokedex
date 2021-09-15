@@ -23,10 +23,10 @@ const GlobalStyle = createGlobalStyle`
 
     h3 {
         font-family: 'Press Start 2P', cursive;
-        color: #F2B705;
+        // color: #F2B705;
     }
 
-    h4 {
+    h5 {
         color: #3F61A6;
         font-weight: bold;
         text-align: right;

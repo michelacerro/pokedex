@@ -31,7 +31,7 @@ export const Type = styled.div`
     min-height: 30px;
     min-width: 30px;
 
-    margin-right: 20px;
+    margin: 10px;
     padding: 10px;
     color: #ffffff;
     text-transform: capitalize;
