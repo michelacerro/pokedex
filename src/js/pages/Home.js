@@ -1,22 +1,25 @@
 // Dependencies
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 // Components
 import AnimatedPokeball from '../components/AnimatedPokeball';
 
 // Styles
-import {HomePage, PageTitle} from '../styles/Pages.style';
-import {Button} from '../styles/Buttons.style';
+import {HomePage, HomeTextBox, HomeTitle, HomeLink} from '../styles/HomePage.style';
+
+// Icons
+import {HiMinus, HiArrowNarrowRight} from 'react-icons/hi';
 
 
 const Home = () => {
     return (
         <HomePage>
-            <PageTitle>Pokémon</PageTitle>
-            <Link to='/pokedex'>
-                <Button>Pokédex</Button>
-            </Link>
+            <HomeTextBox>
+                <HomeTitle>Pokémon</HomeTitle>
+                <br />
+                <br />
+                <HomeLink to='/pokedex'><HiMinus /><HiMinus /><HiArrowNarrowRight /> <span>Pokédex</span></HomeLink>
+            </HomeTextBox>
             <AnimatedPokeball />
         </HomePage>
     )
