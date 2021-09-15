@@ -19,13 +19,14 @@ export const FilterBox = styled.div`
     display: none;
 
     position: fixed;
-    top: 50%;
+    top: 0;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
-    width: 100%;
-    height: 100%;
-    background-color: #F2f2f2;
+    min-width: 80vw;
+    background-color: #CAC7D9;
+    padding: 0 25px;
 
     flex-direction: column;
     justify-content: center;
@@ -48,7 +49,7 @@ export const FilterInput = styled.input`
     height: 2em;
     border: none;
     border-radius: 20px;
-    box-shadow: 2px 2px 10px #CAC7D9;
+    box-shadow: 2px 2px 10px #f2f2f2;
     color: #4F4C59;
     font-size: 16px;
     padding: 15px;
@@ -56,5 +57,33 @@ export const FilterInput = styled.input`
 `;
 
 export const FilterTypes = styled.div`
-    max-width: 600px;
+    min-width: 300px;
+    max-width: 800px;
+`;
+
+export const FilterButton = styled.button`
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-top: 25px;
+
+    &:hover {
+        cursor: pointer;
+        color: #F2f2f2;
+    }
+`;
+
+export const StartButton = styled.button`
+    border: none;
+    background-color: transparent;
+    color: #3F61A6;
+    font: inherit;
+    margin-top: 50px;
+
+    &:hover {
+        cursor: pointer;
+        color: #F2B705;
+    }
 `;

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
-import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes} from '../styles/Search.style';
+import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes, FilterButton, StartButton} from '../styles/Search.style';
 
 // Icons
 import {FiFilter, FiX} from 'react-icons/fi';
@@ -36,6 +36,13 @@ const SearchBox = () => {
         document.querySelector('#filter-box').style.display = 'none';
     }
 
+    const removeFilters = () => {
+        console.log(open);
+    }
+
+    const startResearch = () => {
+        if (open) {document.querySelector('#filter-box').style.display = 'none'}
+    }
 
     return (
         <div>
@@ -60,6 +67,9 @@ const SearchBox = () => {
                         {typeList.map(type => <Type key={type.name} type={type.name}>{type.name}</Type>)} 
                     </TypeBox>
                 </FilterTypes>
+
+                <FilterButton onClick={removeFilters}>Remove filters</FilterButton>
+                <FilterTitle><StartButton onClick={startResearch}>Start research</StartButton></FilterTitle>
             </FilterBox>
         </div>
     );    
