@@ -1,15 +1,15 @@
 // Dependencies
 import React from 'react';
 
+// Icons
+import {CgPokemon} from 'react-icons/cg';
+
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
 import {PreviewLink, PreviewBox, PreviewImage, PreviewInfo, PreviewBalls} from '../styles/Preview.style';
 
 // Components
 import Identifiers from './Identifiers';
-
-// Icons
-import {CgPokemon} from 'react-icons/cg';
 
 
 const PreviewCard = (props) => {

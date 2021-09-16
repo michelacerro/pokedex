@@ -2,13 +2,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-// Styles
-import {ErrorPage, ErrorBox, ErrorTextBox, ErrorText, ErrorTyping1, ErrorTyping2, ErrorLink, ErrorImage} from '../styles/ErrorPage.style';
-
 // Icons
 import {HiArrowNarrowRight} from 'react-icons/hi';
 
+// Styles
+import {ErrorPage, ErrorBox, ErrorTextBox, ErrorText, ErrorTyping1, ErrorTyping2, 
+    ErrorLink, ErrorImage} from '../styles/ErrorPage.style';
 
+    
 const Error = () => {
     const [image, setImage] = useState('');
     const id = Math.floor(Math.random()*152) + 1;

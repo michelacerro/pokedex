@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Styles
-import {PokemonTeam} from '../styles/PokemonTeam.style';
+import {TeamElement} from '../styles/TeamPage.style';
 
 // Components
 import Identifiers from './Identifiers';
@@ -11,10 +11,10 @@ import StaticPokeball from './StaticPokeball';
 
 const TeamEmptyElement = () => {
     return (
-        <PokemonTeam>
+        <TeamElement>
             <StaticPokeball />
-            <Identifiers id='-' name='non definito' />
-        </PokemonTeam>
+            <Identifiers id='0' name='Not defined' />
+        </TeamElement>
     );
 };
 export default TeamEmptyElement;

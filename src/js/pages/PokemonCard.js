@@ -4,17 +4,22 @@ import {useParams, useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import axios from 'axios';
 
-// Styles
-import {GlobalBox, ColumnBox, GeneralBox, BoxTitle} from '../styles/Containers.style';
-import {TypeBox, Type} from '../styles/Types.style';
-import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
-import {Button} from '../styles/Buttons.style';
-
-// Components
-// import Identifiers from '../components/Identifiers';
+// Icons
+import {FiPlus} from 'react-icons/fi';
+import {HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight} from 'react-icons/hi'
 
 // Actions
 import {addPokemon} from '../actions';
+
+// Styles
+import {TypeBox, Type} from '../styles/Types.style';
+import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
+import {PokemonPage, PokemonColumn, PokemonData, AddButton, DataBox, DataTitle, 
+    PreviousPokemon, NextPokemon} from '../styles/PokemonPage.style';
+
+// Components
+import Menu from '../components/Menu';
+// import Identifiers from '../components/Identifiers';
 
 
 const PokemonCard = () => {
@@ -46,32 +51,18 @@ const PokemonCard = () => {
 
 
     return (
-        <GlobalBox>
-            <ColumnBox width='fifty'>
-                <ColumnBox width='full'>
-                    <ColumnBox width='full'>
-                        {/* <img src={pokemonData.sprites.other.dream_world.front_default} alt={name} /> */}
-                    </ColumnBox>
-                    <ColumnBox width='full'>
-                        {/* <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} /> */}
-                    </ColumnBox>
-                </ColumnBox>
-                
-
-                <GeneralBox type='info'>
-                    <BoxTitle>info</BoxTitle>
-                    <h2>Height</h2> <p>{pokemonData.height / 10} m</p>
-                    <br />
-                    <h2>Weight</h2> <p>{pokemonData.weight / 10} kg</p>
-                    <br />
-                    <h2>Base experience</h2> <p>{pokemonData.base_experience }</p>
-                </GeneralBox>
-            </ColumnBox>    
-                
-            <ColumnBox width='fifty'>
+        <PokemonPage>
+            <Menu />
+            <PreviousPokemon><HiOutlineArrowCircleLeft /></PreviousPokemon>
+            <PokemonColumn>
+                <PokemonData>
+                    {/* <PokemonImage src={pokemonData.sprites.other.dream_world.front_default} alt={name} />
+                    <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} /> */}
+                    <AddButton onClick={inMyTeam}><FiPlus /> <span>Add to my Team</span></AddButton>
+                </PokemonData>
                 {/* TYPES */}
-                <GeneralBox type='info'>
-                    <BoxTitle>types</BoxTitle>
+                <DataBox>
+                    <DataTitle>types</DataTitle>
                     <TypeBox>
                         {pokemonData.types ? 
                             pokemonData.types.map(type => (
@@ -80,22 +71,34 @@ const PokemonCard = () => {
                             : <div></div>
                         }
                     </TypeBox>
-                </GeneralBox>
-
+                </DataBox>
+            </PokemonColumn>    
+                
+            <PokemonColumn>
+                {/* INFO */}
+                <DataBox>
+                    <DataTitle>info</DataTitle>
+                    <p>Height</p> <h3>{pokemonData.height / 10} m</h3>
+                    <br />
+                    <p>Weight</p> <h3>{pokemonData.weight / 10} kg</h3>
+                    <br />
+                    <p>Base experience</p> <h3>{pokemonData.base_experience }</h3>
+                </DataBox>
+                
                 {/* ABILITIES */}
-                <GeneralBox type='info'>
-                    <BoxTitle>abilities</BoxTitle>
+                <DataBox>
+                    <DataTitle>abilities</DataTitle>
                     {pokemonData.abilities ?
                         pokemonData.abilities.map(ability => (
-                            <div key={ability.ability.name}>{ability.ability.name}</div>
+                            <h4 key={ability.ability.name}>{ability.ability.name}</h4>
                         ))
                         : <div></div>  
                     }
-                </GeneralBox>
+                </DataBox>
 
                 {/* STATS */}
-                <GeneralBox type='info'>
-                    <BoxTitle>stats</BoxTitle>
+                <DataBox>
+                    <DataTitle>stats</DataTitle>
                     {pokemonData.stats ?
                         pokemonData.stats.map(stat => (
                             <StatBox key={stat.stat.name}>
@@ -107,9 +110,9 @@ const PokemonCard = () => {
                         ))
                         : <div></div>
                     }
-                </GeneralBox>
-                <Button onClick={inMyTeam}>Add Pokémon to my Team</Button>
-            </ColumnBox>
-        </GlobalBox>
+                </DataBox>
+            </PokemonColumn>
+            <NextPokemon><HiOutlineArrowCircleRight /></NextPokemon>
+        </PokemonPage>
     );
 };export default PokemonCard;

@@ -1,14 +1,14 @@
 // Dependencies
 import React from 'react';
 
-// Components
-import AnimatedPokeball from '../components/AnimatedPokeball';
+// Icons
+import {HiMinus, HiArrowNarrowRight} from 'react-icons/hi';
 
 // Styles
 import {HomePage, HomeTextBox, HomeTitle, HomeLink} from '../styles/HomePage.style';
 
-// Icons
-import {HiMinus, HiArrowNarrowRight} from 'react-icons/hi';
+// Components
+import AnimatedPokeball from '../components/AnimatedPokeball';
 
 
 const Home = () => {

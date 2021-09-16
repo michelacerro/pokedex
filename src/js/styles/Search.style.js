@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 
 export const SearchButton = styled.button`
+    position: fixed;
+    top: 65px;
+    left: 20px;
+
     border: none;
     background-color: transparent;
     color: #3F61A6;
     font-size: 25px;
-    padding: 15px;
 
     &:hover {
         cursor: pointer;

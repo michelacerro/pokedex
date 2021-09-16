@@ -1,12 +1,12 @@
 // Dependencies
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 // Styels
-import {TeamPage} from '../styles/Pages.style';
+import {TeamPage, TeamSpace, TeamBox} from '../styles/TeamPage.style';
 
 // Components
+import Menu from '../components/Menu';
 import TeamFullElement from '../components/TeamFullElement';
 import TeamEmptyElement from '../components/TeamEmptyElement';
 
@@ -15,82 +15,82 @@ const MyTeam = () => {
     const teamList = useSelector(state => state.teamReducer.pokemon);
 
     return (
-        <>
-
-        {teamList.length === 0 ? 
-            <TeamPage>
-                <TeamEmptyElement /> 
-                <TeamEmptyElement /> 
-                <TeamEmptyElement /> 
-                <TeamEmptyElement /> 
-                <TeamEmptyElement /> 
-                <TeamEmptyElement /> 
-            </TeamPage>
-            : ( 
-            teamList.length === 1 ?
-                <TeamPage>
-                    <TeamEmptyElement /> 
-                    <TeamEmptyElement /> 
-                    <TeamEmptyElement /> 
-                    <TeamEmptyElement /> 
-                    <TeamEmptyElement /> 
-                    {teamList.map(team => (
-                        <TeamFullElement key={team.id} data={team} />
-                    ))}
-                </TeamPage>
-                : ( 
-                teamList.length === 2 ?
-                    <TeamPage>
+        <TeamPage>
+            <Menu />
+            <TeamSpace>
+                {teamList.length === 0 ? 
+                    <TeamBox>
                         <TeamEmptyElement /> 
                         <TeamEmptyElement /> 
                         <TeamEmptyElement /> 
                         <TeamEmptyElement /> 
-                        {teamList.map(team => (
-                            <TeamFullElement key={team.id} data={team} />
-                        ))}
-                    </TeamPage>
-                    : (
-                    teamList.length === 3 ?
-                        <TeamPage>
+                        <TeamEmptyElement /> 
+                        <TeamEmptyElement /> 
+                    </TeamBox>
+                    : ( 
+                    teamList.length === 1 ?
+                        <TeamBox>
+                            <TeamEmptyElement /> 
+                            <TeamEmptyElement /> 
                             <TeamEmptyElement /> 
                             <TeamEmptyElement /> 
                             <TeamEmptyElement /> 
                             {teamList.map(team => (
                                 <TeamFullElement key={team.id} data={team} />
                             ))}
-                        </TeamPage>
-                        : (
-                        teamList.length === 4 ?
-                            <TeamPage>
+                        </TeamBox>
+                        : ( 
+                        teamList.length === 2 ?
+                            <TeamBox>
+                                <TeamEmptyElement /> 
+                                <TeamEmptyElement /> 
                                 <TeamEmptyElement /> 
                                 <TeamEmptyElement /> 
                                 {teamList.map(team => (
                                     <TeamFullElement key={team.id} data={team} />
                                 ))}
-                            </TeamPage>
+                            </TeamBox>
                             : (
-                            teamList.length === 5 ?
-                                <TeamPage>
+                            teamList.length === 3 ?
+                                <TeamBox>
+                                    <TeamEmptyElement /> 
+                                    <TeamEmptyElement /> 
                                     <TeamEmptyElement /> 
                                     {teamList.map(team => (
                                         <TeamFullElement key={team.id} data={team} />
                                     ))}
-                                </TeamPage>
-                                :
-                                <TeamPage>
-                                    {teamList.map(team => (
-                                        <TeamFullElement key={team.id} data={team} />
-                                    ))}
-                                </TeamPage>
+                                </TeamBox>
+                                : (
+                                teamList.length === 4 ?
+                                    <TeamBox>
+                                        <TeamEmptyElement /> 
+                                        <TeamEmptyElement /> 
+                                        {teamList.map(team => (
+                                            <TeamFullElement key={team.id} data={team} />
+                                        ))}
+                                    </TeamBox>
+                                    : (
+                                    teamList.length === 5 ?
+                                        <TeamBox>
+                                            <TeamEmptyElement /> 
+                                            {teamList.map(team => (
+                                                <TeamFullElement key={team.id} data={team} />
+                                            ))}
+                                        </TeamBox>
+                                        :
+                                        <TeamBox>
+                                            {teamList.map(team => (
+                                                <TeamFullElement key={team.id} data={team} />
+                                            ))}
+                                        </TeamBox>
+                                    )
+                                )
                             )
                         )
                     )
-                )
-            )
-        }
-        
-        <Link to='/pokedex'>Pokédex</Link>
-        </>
+                }
+            </TeamSpace>
+        </TeamPage>
     );
 };
 export default MyTeam;

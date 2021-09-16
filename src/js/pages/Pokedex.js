@@ -2,13 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
+// Styles
+import {PokedexPage, ExtraBox, MainBox} from '../styles/PokedexPage.style';
+
 // Components
 import Menu from '../components/Menu';
 import SearchBox from '../components/SearchBox';
 import PreviewCard from '../components/PreviewCard';
-
-// Styles
-import {PokedexPage, ExtraBox, MainBox} from '../styles/PokedexPage.style';
 
 
 const Pokedex = () => {

@@ -2,15 +2,17 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
 
+// Icons
+import {FiMinus} from 'react-icons/fi';
+
 // Actions
 import {deletePokemon} from '../actions';
 
+// Styles
+import {TeamElement, ImageBox, PokemonImage, DeleteButton} from '../styles/TeamPage.style';
+
 // Components
 import Identifiers from './Identifiers';
-
-// Styles
-import {PokemonTeam} from '../styles/PokemonTeam.style';
-import {Button} from '../styles/Buttons.style';
 
 
 const TeamFullElement = (props) => {
@@ -21,11 +23,11 @@ const TeamFullElement = (props) => {
     };
 
     return (
-        <PokemonTeam>
-            <img src={props.data.image} alt={props.data.name} />
+        <TeamElement>
+            <ImageBox><PokemonImage src={props.data.image} alt={props.data.name} /></ImageBox>
             <Identifiers id={props.data.id} name={props.data.name} />
-            <Button id={props.data.id} onClick={outMyTeam}>Delete Pokémon from my Team</Button>
-        </PokemonTeam>
+            <DeleteButton id={props.data.id} onClick={outMyTeam}><FiMinus /> <span>Delete from my Team</span></DeleteButton>
+        </TeamElement>
     );
 };
 export default TeamFullElement;

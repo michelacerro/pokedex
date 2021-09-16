@@ -2,7 +2,8 @@
 import React from 'react';
 
 // Styles
-import {StaticPokeballBox, PokeballTop, PokeballBottom, PokeballDarkCenter, PokeballMiddle, PokeballLightCenter, PokeballBorderCenter} from '../styles/Pokeball.style';
+import {StaticPokeballBox, PokeballTop, PokeballBottom, PokeballDarkCenter, PokeballMiddle, 
+    PokeballLightCenter, PokeballBorderCenter} from '../styles/Pokeball.style';
 
 
 const StaticPokeball = () => {

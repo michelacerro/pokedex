@@ -17,14 +17,8 @@ const GlobalStyle = createGlobalStyle`
 
 
     // TEXT
-    h1, h2 {
-        text-transform: capitalize;
-    }
-
-    h3 {
-        font-family: 'Press Start 2P', cursive;
-        // color: #F2B705;
-    }
+    h2, h4 {text-transform: capitalize;}
+    h4 {font-size: 16px;}
 
     h5 {
         color: #3F61A6;
@@ -32,12 +26,6 @@ const GlobalStyle = createGlobalStyle`
         text-align: right;
     }
 
-   
-    // IMAGE
-    img {
-        width: 100px;
-        height: 100px;
-    }
 
 `;
 export default GlobalStyle;

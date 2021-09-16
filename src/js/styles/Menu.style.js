@@ -4,16 +4,15 @@ import {Link} from 'react-router-dom';
 
 
 export const MenuButton = styled.button`
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
     border: none;
     background-color: transparent;
     color: #3F61A6;
     font-size: 25px;
-    padding: 15px;
-
-
-    // display: flex;
-    // align-items: center;
-    
+  
     &:hover {
         cursor: pointer;
         color: #F2B705;

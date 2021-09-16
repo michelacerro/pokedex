@@ -2,12 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-// Styles
-import {TypeBox, Type} from '../styles/Types.style';
-import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes, FilterButton, StartButton} from '../styles/Search.style';
-
 // Icons
 import {FiFilter, FiX} from 'react-icons/fi';
+
+// Styles
+import {TypeBox, Type} from '../styles/Types.style';
+import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes, 
+    FilterButton, StartButton} from '../styles/Search.style';
 
 
 const SearchBox = () => {
