@@ -1,5 +1,6 @@
 // Dependencies
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 
 // Icons
 import {CgPokemon} from 'react-icons/cg';
@@ -13,6 +14,13 @@ import Identifiers from './Identifiers';
 
 
 const PreviewCard = (props) => {
+    const teamList = useSelector(state => state.teamReducer.pokemon);
+    const [team, setTeam] = useState([]);
+
+    useEffect(() => {
+        setTeam(teamList.map(teamElement => teamElement.id));
+    }, [teamList]);
+
     return (
         <PreviewLink to={`/pokemon/${props.data.name}`} >
             <PreviewBox>
@@ -29,7 +37,7 @@ const PreviewCard = (props) => {
                                 : <div></div>
                             }
                         </TypeBox>
-                        <CgPokemon />
+                        {team.includes(props.data.id.toString()) ? <CgPokemon /> : <div></div> }
                     </PreviewBalls>
                 </PreviewInfo>
             </PreviewBox>
