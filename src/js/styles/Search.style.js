@@ -24,22 +24,34 @@ export const FilterBox = styled.div`
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    // transform: translateX(-50%);
 
-    min-width: 80vw;
+    // width: 100vw;
+    // height: 100vw;
     background-color: #CAC7D9;
-    padding: 0 25px;
+    padding: 25px;
 
     flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
 
-export const ExitBox = styled.div`
+export const ExitButton = styled.button`
     position: absolute;
     top: 20px;
     right: 20px;
+
+    border: none;
+    background-color: transparent;
+    color: #3F61A6;
+    font-size: 25px;
+
+    &:hover {
+        cursor: pointer;
+        color: #F2B705;
+    }
 `;
 
 export const FilterTitle = styled.h3`
@@ -88,5 +100,6 @@ export const StartButton = styled.button`
     &:hover {
         cursor: pointer;
         color: #F2B705;
+        transform: scale(1.1, 1.1);
     }
 `;

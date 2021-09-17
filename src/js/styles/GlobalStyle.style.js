@@ -9,11 +9,15 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        ::-webkit-scrollbar {
+            display: none;
+        }
         font-family: 'Roboto', sans-serif;
         color: #4F4C59;
-
     }
+
 
 
     // TEXT

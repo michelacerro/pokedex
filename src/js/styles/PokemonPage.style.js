@@ -3,11 +3,17 @@ import styled from 'styled-components';
 
 
 export const PokemonPage = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     display: flex;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const PokemonCard = styled.div`
+    display: flex;
+    align-items: flex-end;
 `;
 
 export const PokemonColumn = styled.div`
@@ -16,9 +22,9 @@ export const PokemonColumn = styled.div`
 
 export const PokemonData = styled.div`
     padding: 20px;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const PokemonImage = styled.img`
@@ -65,6 +71,20 @@ export const DataTitle = styled.h2`
     position: relative;
     top: -11px;
     left: -5px;
+`;
+
+export const DataLine = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 2px;
+    text-transform: capitalize;
+`;
+
+export const PokemonChange = styled.div`
+    width: 70px;
+    height: 100%;
 `;
 
 export const PreviousPokemon = styled.button`

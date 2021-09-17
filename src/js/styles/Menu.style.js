@@ -17,6 +17,8 @@ export const MenuButton = styled.button`
         cursor: pointer;
         color: #F2B705;
     }
+
+    z-index: 10;
 `;
 
 export const MenuBox = styled.div`
@@ -47,4 +49,8 @@ export const MenuLink = styled(Link)`
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px;
+
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
 `;

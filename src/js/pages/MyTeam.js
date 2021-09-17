@@ -16,7 +16,6 @@ const MyTeam = () => {
 
     return (
         <TeamPage>
-            <Menu />
             <TeamSpace>
                 {teamList.length === 0 ? 
                     <TeamBox>
@@ -90,6 +89,7 @@ const MyTeam = () => {
                     )
                 }
             </TeamSpace>
+            <Menu />
         </TeamPage>
     );
 };

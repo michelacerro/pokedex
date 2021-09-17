@@ -18,6 +18,10 @@ export const PreviewBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &:hover {
+        transform: scale(1.05, 1.05);
+    }
 `;
 
 export const PreviewImage = styled.img`

@@ -1,13 +1,17 @@
 // Dependencies
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import axios from 'axios';
 
 // Icons
 import {FiFilter, FiX} from 'react-icons/fi';
 
+// Actions
+import {openFilter, closeFilter} from '../actions';
+
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
-import {SearchButton, FilterBox, ExitBox, FilterTitle, FilterInput, FilterTypes, 
+import {SearchButton, FilterBox, ExitButton, FilterTitle, FilterInput, FilterTypes, 
     FilterButton, StartButton} from '../styles/Search.style';
 
 
@@ -24,25 +28,26 @@ const SearchBox = () => {
         typeData()
     }, [url]);
 
-
-    const [open, setOpen] = useState(false);
+    
+    const dispatch = useDispatch();
 
     const openFilters = () => {
-        setOpen(true);
+        dispatch(openFilter(true));
         document.querySelector('#filter-box').style.display = 'flex';
+
     };
 
     const closeFilters = () => {
-        setOpen(false);
+        dispatch(closeFilter(false));
         document.querySelector('#filter-box').style.display = 'none';
     }
 
     const removeFilters = () => {
-        console.log(open);
+        console.log('buu');
     }
 
     const startResearch = () => {
-        if (open) {document.querySelector('#filter-box').style.display = 'none'}
+        document.querySelector('#filter-box').style.display = 'none';
     }
 
     return (
@@ -51,11 +56,9 @@ const SearchBox = () => {
                 <FiFilter />
             </SearchButton>
             <FilterBox id='filter-box'>
-                <ExitBox>
-                    <SearchButton onClick={closeFilters}>
-                        <FiX />
-                    </SearchButton>
-                </ExitBox>
+                <ExitButton onClick={closeFilters}>
+                    <FiX />
+                </ExitButton>
 
                 {/* INPUT */}
                 <FilterTitle>Search for name</FilterTitle>

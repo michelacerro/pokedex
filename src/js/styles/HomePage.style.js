@@ -15,7 +15,7 @@ export const HomePage = styled.div`
     background: radial-gradient(#CAC7D9, transparent);
 `;
 
-export const HomeTextBox = styled.p`
+export const HomeTextBox = styled.div`
     text-align: right;
 `;
 

@@ -24,13 +24,13 @@ const Menu = () => {
             <MenuButton onClick={showMenu}>
                 {open ? <FiMinus /> : <FiMenu />}
             </MenuButton>
-            <MenuBox id='menu-box'>
-                <MenuLink to='/'>Home</MenuLink>
-                <MdMoreHoriz />
-                <MenuLink to='/pokedex'>Pokédex</MenuLink>
-                <MdMoreHoriz />
-                <MenuLink to='my-team'>My Team</MenuLink>
-            </MenuBox>
+                <MenuBox id='menu-box'>
+                    <MenuLink to='/'>Home</MenuLink>
+                    <MdMoreHoriz />
+                    <MenuLink to='/pokedex'>Pokédex</MenuLink>
+                    <MdMoreHoriz />
+                    <MenuLink to='my-team'>My Team</MenuLink>
+                </MenuBox>
         </>
     );
 };

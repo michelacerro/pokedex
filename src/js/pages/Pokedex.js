@@ -1,12 +1,13 @@
 // Dependecies
 import React, {useState, useEffect} from 'react';
+// import {useSelector} from 'react-redux';
 import axios from 'axios';
 
 // Styles
-import {PokedexPage, ExtraBox, MainBox} from '../styles/PokedexPage.style';
+import {PokedexPage, MainBox} from '../styles/PokedexPage.style';
 
 // Components
-import Menu from '../components/Menu';
+// import Menu from '../components/Menu';
 import SearchBox from '../components/SearchBox';
 import PreviewCard from '../components/PreviewCard';
 
@@ -32,13 +33,11 @@ const Pokedex = () => {
         fetchData()
     }, [url]);
 
+    // const filterState = useSelector(state => state.filterReducer.state);
+
 
     return (
         <PokedexPage>
-            <ExtraBox>
-                <Menu />
-                <SearchBox />
-            </ExtraBox>
             <MainBox>
                 {pokemonList.map(pokemon => {
                     return (
@@ -46,6 +45,8 @@ const Pokedex = () => {
                     )})
                 }
             </MainBox>
+            {/* {filterState ? <div></div> : <Menu />} */}
+            <SearchBox />
         </PokedexPage>
     );
 };
