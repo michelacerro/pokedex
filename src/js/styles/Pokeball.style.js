@@ -7,22 +7,20 @@ export const AnimatedPokeballBox = styled.div`
     bottom: 7%;
     left: 7%;
 
-    width: 250px;
-    height: 250px;
+    width: 35vw;
+    max-width: 250px;
+    height: 35vw;
+    max-height: 250px;
     border-radius: 50%;
     overflow: hidden;
     
-    animation: wobble 5s infinite;
-    @keyframes wobble {
-        0%, 20%, 24%, 28%, 80%, 84%, 88%,92%, 96%, 100% {
-            transform: rotate(0deg);
-        } 
-        22%, 82%, 90% {
-            transform: rotate(4deg);
-        } 
-        26%, 86%, 94% {
-            transform: rotate(-4deg);
-        }
+    animation: move 5s infinite;
+    @keyframes move {
+        0%, 87% {transform: rotate(0deg);} 
+        10% {transform: rotate(-25deg);} 
+        25% {transform: rotate(25deg);}
+        42% {transform: rotate(-15deg);}
+        62% {transform: rotate(15deg);}
     }
 `;
 
@@ -103,7 +101,8 @@ export const PokeballShadow = styled.div`
     position: absolute;
     bottom: 2%;
     left: 7%;
-    width: 250px;
+    width: 35vw;
+    max-width: 250px;
     height: 20px;
     background: rgb(0, 0, 0, 0.5);
     border-radius: 50%;
