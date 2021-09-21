@@ -19,7 +19,7 @@ export const ErrorBox = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
 
     background-color: #f2f2f2;
@@ -28,7 +28,7 @@ export const ErrorBox = styled.div`
 
 export const ErrorTextBox = styled.div`
     width: 100%;
-    height: 8vh;
+    min-height: 8vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -46,9 +46,9 @@ export const ErrorTyping1 = styled.div`
     border-right: 1vw solid #CAC7D9;
     
     animation:
-        typing 5.5s steps(15, end),
+        typing 2s steps(15, end),
         blink-border .5s step-end 16,
-        hide-border 1000000s 6s; 
+        hide-border 1000000s 2.5s; 
 
     @keyframes typing {
         from {width: 0;} to {width: 100%;}
@@ -68,8 +68,8 @@ export const ErrorTyping2 = styled.div`
     border-right: 1vw solid #CAC7D9;
         
     animation:
-        show 6.2s step-end,
-        typing 7.4s steps(20, end) 6.2s,
+        show 2.5s step-end,
+        typing 2.4s steps(20, end) 2.5s,
         blink-border .5s step-end infinite;
 
     @keyframes show {

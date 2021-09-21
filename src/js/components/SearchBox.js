@@ -17,18 +17,17 @@ import {SearchButton, FilterBox, ExitButton, FilterTitle, FilterInput, FilterTyp
 
 const SearchBox = () => {
     const [typeList, setTypeList] = useState([]);
-    const url = 'casa';
 
     useEffect(() => {
         async function typeData () {
             const response = await axios.get(`https://pokeapi.co/api/v2/type`)
                 .catch(error => alert(error));
-            setTypeList(response.data.results);
+            setTypeList(response.data.results.filter(filtered => filtered.name !== 'dark' && filtered.name !== 'shadow' && filtered.name !== 'unknown'))
         };
         typeData()
-    }, [url]);
+    }, []);
 
-    
+
     const dispatch = useDispatch();
 
     const openFilters = () => {
@@ -50,6 +49,7 @@ const SearchBox = () => {
         document.querySelector('#filter-box').style.display = 'none';
     }
 
+
     return (
         <div>
             <SearchButton onClick={openFilters}>
@@ -67,7 +67,7 @@ const SearchBox = () => {
                 {/* TYPES FILTER */}
                 <FilterTitle>Search for type</FilterTitle>
                 <FilterTypes>
-                    <TypeBox >
+                    <TypeBox>
                         {typeList.map(type => <Type key={type.name} type={type.name}>{type.name}</Type>)} 
                     </TypeBox>
                 </FilterTypes>

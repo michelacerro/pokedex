@@ -1,24 +1,24 @@
 // Dependecies
 import React, {useState, useEffect} from 'react';
-import {useParams, useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import {useParams} from 'react-router-dom';
+// import {useDispatch} from 'react-redux';
 import axios from 'axios';
 
 // Icons
-import {FiPlus} from 'react-icons/fi';
-import {HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight} from 'react-icons/hi'
+// import {FiPlus} from 'react-icons/fi';
+// import {HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight} from 'react-icons/hi'
 
 // Actions
-import {addPokemon} from '../actions';
+// import {addPokemon} from '../actions';
 
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
 import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
-import {PokemonPage, PokemonColumn, PokemonData,  AddButton, DataBox, DataTitle, DataLine,
-    PokemonChange, PreviousPokemon, NextPokemon} from '../styles/PokemonPage.style';
+import {PokemonPage, PokemonColumn, PokemonData,   DataBox, DataTitle, DataLine
+    } from '../styles/PokemonPage.style';
 
 // Components
-import Menu from '../components/Menu';
+// import Menu from '../components/Menu';
 // import Identifiers from '../components/Identifiers';
 
 
@@ -33,32 +33,29 @@ const PokemonCard = () => {
                 .catch(error => alert(error));
             setPokemonData(response.data);
         }
-        fetchData()
+        fetchData();
     }, [url]);
 
-    
-    const dispatch = useDispatch();
-    const history = useHistory();
-
-    const inMyTeam = () => {
-        dispatch(addPokemon({
-            id: pokemonData.id.toString(),
-            name: pokemonData.name,
-            image: pokemonData.sprites.other.dream_world.front_default
-        }));
-        history.push('/my-team');
-    }
+    // const dispatch = useDispatch();
+    // const inMyTeam = () => {
+    //     dispatch(addPokemon({
+    //         id: pokemonData.id.toString(),
+    //         name: pokemonData.name,
+    //         image: pokemonData.sprites.other.dream_world.front_default
+    //     }));
+    //     useHistory.push('/my-team');
+    // }
 
 
     return (
         <PokemonPage>
-            <PokemonChange><PreviousPokemon><HiOutlineArrowCircleLeft /></PreviousPokemon></PokemonChange>
+            {/* <PokemonChange><PreviousPokemon><HiOutlineArrowCircleLeft /></PreviousPokemon></PokemonChange> */}
             <PokemonCard>
                 <PokemonColumn>
                     <PokemonData>
                         {/* <PokemonImage src={pokemonData.sprites.other.dream_world.front_default} alt={name} /> */}
                         {/* <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} /> */}
-                        <AddButton onClick={inMyTeam}><FiPlus /> <span>Add to my Team</span></AddButton>
+                        {/* <AddButton onClick={inMyTeam}><FiPlus /> <span>Add to my Team</span></AddButton> */}
                     </PokemonData>
                     {/* TYPES */}
                     <DataBox>
@@ -111,8 +108,8 @@ const PokemonCard = () => {
                     </DataBox>
                 </PokemonColumn>
             </PokemonCard>
-            <PokemonChange><NextPokemon><HiOutlineArrowCircleRight /></NextPokemon></PokemonChange>
-            <Menu />
+            {/* <PokemonChange><NextPokemon><HiOutlineArrowCircleRight /></NextPokemon></PokemonChange> */}
+            {/* <Menu /> */}
         </PokemonPage>
     );
 };export default PokemonCard;

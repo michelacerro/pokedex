@@ -101,10 +101,10 @@ export const PokeballBorderCenter = styled.div`
 
 export const PokeballShadow = styled.div`
     position: absolute;
-    bottom: 0;
+    bottom: 2%;
     left: 7%;
     width: 250px;
-    height: 28%;
+    height: 20px;
     background: rgb(0, 0, 0, 0.5);
     border-radius: 50%;
     filter: blur(15px);

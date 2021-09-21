@@ -1,3 +1,17 @@
+//listReducer
+export const  createList = (array) => {
+    return {
+        type: 'CREATE_LIST',
+        data: array
+    }
+}
+
+export const deleteList = () => {
+    return {
+        type: 'DELETE_LIST'
+    }
+}
+
 // teamReducer
 export const addPokemon = (object) => {
     return {

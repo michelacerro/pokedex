@@ -11,29 +11,27 @@ import {ErrorPage, ErrorBox, ErrorTextBox, ErrorText, ErrorTyping1, ErrorTyping2
 
     
 const Error = () => {
-    const [image, setImage] = useState('');
-    const id = Math.floor(Math.random()*152) + 1;
-    console.log('id' + id);
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+     const [image, setImage] = useState('');
 
     useEffect(() => {
         async function fetchData () {
-            const response = await axios.get(url)
+            const id = Math.floor(Math.random()*152) + 1;
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
                 .catch(error => alert(error));
-                console.log('ID' + response.data.id);
-                setImage(response.data.sprites.other.dream_world.front_default);
+            setImage(response.data.sprites.other.dream_world.front_default);
          };
         fetchData()
-    }, [url]);
+    }, []);
+
 
     return(
         <ErrorPage>
             <ErrorBox>
                 <ErrorTextBox>
-                    <p><ErrorTyping1><ErrorText>Page not found.</ErrorText></ErrorTyping1></p>
-                    <p><ErrorTyping2><ErrorText>
+                    <div><ErrorTyping1><ErrorText>Page not found.</ErrorText></ErrorTyping1></div>
+                    <div><ErrorTyping2><ErrorText>
                             <HiArrowNarrowRight /> Return to <ErrorLink to='/pokedex'>Pokédex</ErrorLink>.
-                    </ErrorText></ErrorTyping2></p>
+                    </ErrorText></ErrorTyping2></div>
                 </ErrorTextBox>
                 <ErrorImage src={image} alt='' />
             </ErrorBox>

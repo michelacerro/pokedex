@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 export const MenuButton = styled.button`
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 10px;
 
     border: none;
     background-color: transparent;

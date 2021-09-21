@@ -6,7 +6,7 @@ export const TypeBox = styled.div`
     flex-wrap: wrap;
 `;
 
-export const Type = styled.div`
+export const Type = styled.button`
     --grass: #90BF2A;
     --poison: #AE7EF2;
     --fire: #F20519;
@@ -24,15 +24,22 @@ export const Type = styled.div`
     --ice: #38BDF2;
     --ghost: #73346F;
     --dragon: #8C0F26;
-    --dark: #1D1E26;
 
     background-color: var(${props => ('--' + props.type)});
     border-radius: 15px;
+    border: none;
     min-height: 30px;
     min-width: 30px;
 
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     color: #ffffff;
     text-transform: capitalize;
+
+    &:hover, :visited {
+        transform: scale(1.05, 1.05);
+    }
+    &:focus {
+        font-weight: bold;
+    }
 `;

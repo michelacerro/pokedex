@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 export const SearchButton = styled.button`
     position: fixed;
-    top: 65px;
-    left: 20px;
+    top: 55px;
+    left: 10px;
 
     border: none;
     background-color: transparent;
@@ -26,10 +26,7 @@ export const FilterBox = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    // transform: translateX(-50%);
 
-    // width: 100vw;
-    // height: 100vw;
     background-color: #CAC7D9;
     padding: 25px;
 
@@ -61,14 +58,24 @@ export const FilterTitle = styled.h3`
 
 export const FilterInput = styled.input`
     min-width: 300px;
+    max-width: 700px;
+    width: 80vw;
     height: 2em;
+
     border: none;
     border-radius: 20px;
     box-shadow: 2px 2px 10px #f2f2f2;
+    background-color: rgb(255, 255, 255, 75%);
+
     color: #4F4C59;
     font-size: 16px;
     padding: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 7vh;
+
+    &:focus {
+        outline: none;
+        background-color: rgb(255, 255, 255);
+    }
 `;
 
 export const FilterTypes = styled.div`

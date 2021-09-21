@@ -30,7 +30,7 @@ export const HomeTitle = styled.h1`
 export const HomeLink = styled(Link)`
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
-    font-size: 2vw;
+    font-size: 3vw;
     color: #4F4C59;
     padding-right: 1vw;
 
@@ -39,5 +39,10 @@ export const HomeLink = styled(Link)`
     }
     span:hover {
         color: #F2B705;
+    }
+
+    animation: show 5s step-end;
+    @keyframes show {
+        0% {opacity: 0%;} 100% {opacity: 100%;}
     }
 `;
