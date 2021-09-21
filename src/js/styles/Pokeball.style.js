@@ -14,13 +14,19 @@ export const AnimatedPokeballBox = styled.div`
     border-radius: 50%;
     overflow: hidden;
     
-    animation: move 5s infinite;
+    animation: move 7s infinite;
     @keyframes move {
-        0%, 87% {transform: rotate(0deg);} 
-        10% {transform: rotate(-25deg);} 
-        25% {transform: rotate(25deg);}
-        42% {transform: rotate(-15deg);}
-        62% {transform: rotate(15deg);}
+        0% {transform: translate(-50vw, -70vh) scale(0.4);}
+        15% {transform: translate(0) scale(1);}
+        18% {transform: rotate(-25deg);}
+        23% {transform: rotate(24deg);} 
+        29% {transform: rotate(-20deg);}
+        36% {transform: rotate(19deg);}
+        44% {transform: rotate(-15deg);}
+        53% {transform: rotate(14deg);}
+        63% {transform: rotate(-10deg);}
+        74% {transform: rotate(9deg);}
+        86% {transform: rotate(0deg);}
     }
 `;
 
