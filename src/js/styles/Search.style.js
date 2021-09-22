@@ -56,6 +56,12 @@ export const FilterTitle = styled.h3`
     margin-bottom: 15px;
 `;
 
+export const FilterForm = styled.form`
+    display: flex;
+    align-items: center;
+    margin-bottom: 7vh;
+`;
+
 export const FilterInput = styled.input`
     min-width: 300px;
     max-width: 700px;
@@ -70,13 +76,26 @@ export const FilterInput = styled.input`
     color: #4F4C59;
     font-size: 16px;
     padding: 15px;
-    margin-bottom: 7vh;
 
     &:focus {
         outline: none;
         background-color: rgb(255, 255, 255);
     }
 `;
+
+export const InputButton = styled.button`
+    height: 2em;
+    margin-left: 5px;
+    border: none;
+    background-color: transparent;
+    color: #3F61A6;
+    font-size: 20px;
+
+    &:hover {
+        cursor: pointer;
+        color: #F2B705;
+    }
+`; 
 
 export const FilterTypes = styled.div`
     min-width: 300px;
@@ -94,19 +113,5 @@ export const FilterButton = styled.button`
     &:hover {
         cursor: pointer;
         color: #F2f2f2;
-    }
-`;
-
-export const StartButton = styled.button`
-    border: none;
-    background-color: transparent;
-    color: #3F61A6;
-    font: inherit;
-    margin-top: 50px;
-
-    &:hover {
-        cursor: pointer;
-        color: #F2B705;
-        transform: scale(1.1, 1.1);
     }
 `;

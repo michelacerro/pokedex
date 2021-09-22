@@ -11,7 +11,7 @@ export const PokedexPage = styled.div`
 
 export const MainBox = styled.div`
     width: 100%;
-    padding: 10px 5px 10px 30px;
+    padding: 10px;
 
     display: flex;
     flex-wrap: wrap;

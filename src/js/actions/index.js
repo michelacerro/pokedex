@@ -1,4 +1,4 @@
-//listReducer
+// listReducer
 export const  createList = (array) => {
     return {
         type: 'CREATE_LIST',
@@ -11,6 +11,52 @@ export const deleteList = () => {
         type: 'DELETE_LIST'
     }
 }
+
+
+// textReducer
+export const addText = (array) => {
+    return {
+        type: 'ADD_TEXT',
+        data: array
+    }
+}
+
+export const deleteText = () => {
+    return {
+        type: 'DELETE_TEXT'
+    }
+}
+
+
+// warningReducer 
+export const saveWarning = (string) => {
+    return {
+        type: 'SAVE_WARNING',
+        data: string
+    }
+}
+
+export const deleteWarning = () => {
+    return {
+        type: 'DELETE_WARNING'
+    }
+}
+
+
+// typeReducer
+export const addType = (array) => {
+    return {
+        type: 'ADD_TYPE',
+        data: array
+    }
+}
+
+export const deleteType = () => {
+    return {
+        type: 'DELETE_TYPE'
+    }
+}
+
 
 // teamReducer
 export const addPokemon = (object) => {

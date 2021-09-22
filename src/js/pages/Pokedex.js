@@ -13,14 +13,29 @@ import PreviewCard from '../components/PreviewCard';
 
 const Pokedex = () => {
     const listState = useSelector(state => state.listReducer.pokemon);
-    console.log(listState);
+    const textState = useSelector(state => state.textReducer.pokemon);
+    const warningState = useSelector(state => state.warningReducer.warning);
+    const typeState = useSelector(state => state.typeReducer.pokemon);
     const filterState = useSelector(state => state.filterReducer.state);
 
 
     return (
         <PokedexPage>
             <MainBox>
-                {listState.map(pokemonData => pokemonData.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />))}
+                {textState.length > 0
+                    ?
+                textState.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />)
+                    : (warningState.length > 0
+                        ?
+                    <div>{warningState}</div>
+                        : (typeState.length > 0 
+                            ? 
+                            typeState.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />)
+                            :
+                        listState.map(pokemonData => pokemonData.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />))
+                        )
+                    )
+                }
             </MainBox>
             {filterState ? <div></div> : <Menu />}
             <SearchBox />
