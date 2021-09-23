@@ -47,6 +47,7 @@ const SearchBox = () => {
     const listState = useSelector(state => state.listReducer.pokemon);
 
     const [text, setText] = useState('');
+    const pokemonForText = [];
     const searchForText = (e) => {
         e.preventDefault();
         if (text.trim() === '') {
@@ -59,16 +60,18 @@ const SearchBox = () => {
 
         listState.map(list => list.map(pokemon => {
             const poke = pokemon;
-            if (pokemon.name.includes(text)) {dispatch(addText(poke))}
+            if (pokemon.name.includes(text)) {pokemonForText.push(poke)}
             else {dispatch(saveWarning(text))};
             return poke;
         }))
+        dispatch(addText(pokemonForText));
 
         setText('');
         dispatch(closeFilter(false));
         document.querySelector('#filter-box').style.display = 'none';
     }
 
+    const pokemonForType = [];
     const searchForType = (e) => {
         dispatch(deleteText());
         dispatch(deleteWarning());
@@ -76,9 +79,10 @@ const SearchBox = () => {
 
         listState.map(list => list.map(pokemon => {
             const poke = pokemon;
-            pokemon.types.map(type => type.type.name === e.target.textContent ?  dispatch(addType(poke)) : '');
+            pokemon.types.map(type => type.type.name === e.target.textContent ? pokemonForType.push(poke) : '');
             return poke;
          }));
+        dispatch(addType(pokemonForType));
 
         dispatch(closeFilter(false));
         document.querySelector('#filter-box').style.display = 'none';

@@ -18,19 +18,18 @@ const Pokedex = () => {
     const typeState = useSelector(state => state.typeReducer.pokemon);
     const filterState = useSelector(state => state.filterReducer.state);
 
-
     return (
         <PokedexPage>
             <MainBox>
                 {textState.length > 0
                     ?
-                textState.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />)
+                    textState.map(pokemonData => pokemonData.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />))
                     : (warningState.length > 0
                         ?
                     <div>{warningState}</div>
                         : (typeState.length > 0 
                             ? 
-                            typeState.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />)
+                            typeState.map(pokemonData => pokemonData.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />))
                             :
                         listState.map(pokemonData => pokemonData.map(pokemon => <PreviewCard key={pokemon.id} data={pokemon} />))
                         )
