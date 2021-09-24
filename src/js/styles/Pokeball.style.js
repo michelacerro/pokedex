@@ -112,7 +112,7 @@ export const PokeballBorderCenter = styled.div`
 
 export const PokeballShadow = styled.div`
     position: absolute;
-    bottom: 2%;
+    bottom: 5%;
     left: 7%;
     width: 35vw;
     max-width: 250px;
