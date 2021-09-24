@@ -22,7 +22,7 @@ export const PokemonColumn = styled.div`
 `;
 
 export const PokemonData = styled.div`
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +35,7 @@ export const PokemonImage = styled.img`
 `;
 
 export const AddButton = styled.button`
-    margin-top: 50px;
+    margin-top: 40px;
     width: 100%;
     border: none;
     background-color: transparent;

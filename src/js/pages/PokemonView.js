@@ -8,14 +8,13 @@ import {FiPlus} from 'react-icons/fi';
 import {HiOutlineArrowCircleLeft, HiOutlineArrowCircleRight} from 'react-icons/hi'
 
 // Actions
-import {addTeam} from '../actions';
+import {addTeam, addElement, deleteElement} from '../actions';
 
 // Styles
 import {TypeBox, Type} from '../styles/Types.style';
 import {StatBox, StatLabel, StatBar, StatLevel} from '../styles/Stats.style';
 import {PokemonPage, PokemonCard, PokemonColumn, PokemonData, PokemonImage, AddButton, DataBox, DataTitle, DataLine,
     PokemonChange, PreviousPokemon, NextPokemon} from '../styles/PokemonPage.style';
-// import {PokemonPage, PokemonColumn, PokemonData, DataBox, DataTitle, DataLine} from '../styles/PokemonPage.style';
 
 // Components
 import Menu from '../components/Menu';
@@ -23,11 +22,13 @@ import Identifiers from '../components/Identifiers';
 
 
 const PokemonView = () => {
+    const listState = useSelector(state => state.listReducer.pokemon);
     const elementState = useSelector(state => state.elementReducer.pokemon);
     const teamState = useSelector(state => state.teamReducer.pokemon);
     
     const dispatch = useDispatch();
     const history = useHistory();
+
     const inMyTeam = () => {
         if (teamState.length >= 6) {alert('hai già sceleto tutti i pokemon')}
         else {
@@ -41,9 +42,58 @@ const PokemonView = () => {
     }
 
 
+    const toPreviousPokemon = () => {
+        if (elementState.id === 1) {
+            listState.map(list => list.map(pokemon => {
+                if (pokemon.id === 151) {
+                    dispatch(deleteElement());
+                    dispatch(addElement(pokemon));
+
+                    history.push(`/pokemon/${pokemon.name}`);
+                };
+                return pokemon;
+            }));
+        } else {
+            listState.map(list => list.map(pokemon => {
+                if (pokemon.id === (elementState.id - 1)) {
+                    dispatch(deleteElement());
+                    dispatch(addElement(pokemon));
+
+                    history.push(`/pokemon/${pokemon.name}`);
+                };
+                return pokemon;
+            }));
+        };      
+    };
+
+    const toNextPokemon = () => {
+        if (elementState.id === 151) {
+            listState.map(list => list.map(pokemon => {
+                if (pokemon.id === 1) {
+                    dispatch(deleteElement());
+                    dispatch(addElement(pokemon));
+
+                    history.push(`/pokemon/${pokemon.name}`);
+                };
+                return pokemon;
+            }));
+        } else {
+            listState.map(list => list.map(pokemon => {
+                if (pokemon.id === (elementState.id + 1)) {
+                    dispatch(deleteElement());
+                    dispatch(addElement(pokemon));
+
+                    history.push(`/pokemon/${pokemon.name}`);;
+                };
+                return pokemon;
+            }));
+        };     
+    };
+
+
     return (
         <PokemonPage>
-            <PokemonChange><PreviousPokemon><HiOutlineArrowCircleLeft /></PreviousPokemon></PokemonChange>
+            <PokemonChange><PreviousPokemon onClick={toPreviousPokemon}><HiOutlineArrowCircleLeft /></PreviousPokemon></PokemonChange>
             <PokemonCard>
                 <PokemonColumn>
                     <PokemonData>
@@ -52,6 +102,17 @@ const PokemonView = () => {
                         <AddButton onClick={inMyTeam}><FiPlus /> <span>Add to my Team</span></AddButton>
                     </PokemonData>
                     
+                    {/* INFO */}
+                    <DataBox>
+                        <DataTitle>info</DataTitle>
+                        <DataLine><p>Height </p> <h3>{elementState.height / 10} m</h3></DataLine>
+                        <DataLine><p>Weight </p> <h3>{elementState.weight / 10} kg</h3></DataLine>
+                        <DataLine><p>Base experience </p> <h3>{elementState.base_experience }</h3></DataLine>
+                    </DataBox>
+                </PokemonColumn>
+                    
+                <PokemonColumn>
+                  
                     {/* TYPES */}
                     <DataBox>
                         <DataTitle>types</DataTitle>
@@ -64,18 +125,18 @@ const PokemonView = () => {
                             }
                         </TypeBox>
                     </DataBox>
-                </PokemonColumn>
                     
-                <PokemonColumn>
-                    
-                    {/* INFO */}
+                    {/* ABILITIES */}
                     <DataBox>
-                        <DataTitle>info</DataTitle>
-                        <DataLine><p>Height </p> <h3>{elementState.height / 10} m</h3></DataLine>
-                        <DataLine><p>Weight </p> <h3>{elementState.weight / 10} kg</h3></DataLine>
-                        <DataLine><p>Base experience </p> <h3>{elementState.base_experience }</h3></DataLine>
+                        <DataTitle>abilities</DataTitle>
+                        {elementState.abilities ?
+                            elementState.abilities.map(ability => (
+                                <DataLine key={ability.ability.name}>{ability.ability.name}</DataLine>
+                            ))
+                            : <div></div>  
+                        }
                     </DataBox>
-                    
+
                     {/* STATS */}
                     <DataBox>
                         <DataTitle>stats</DataTitle>
@@ -92,19 +153,9 @@ const PokemonView = () => {
                         }
                     </DataBox>
 
-                    {/* ABILITIES */}
-                    <DataBox>
-                        <DataTitle>abilities</DataTitle>
-                        {elementState.abilities ?
-                            elementState.abilities.map(ability => (
-                                <DataLine key={ability.ability.name}>{ability.ability.name}</DataLine>
-                            ))
-                            : <div></div>  
-                        }
-                    </DataBox>
                 </PokemonColumn>
             </PokemonCard>
-            <PokemonChange><NextPokemon><HiOutlineArrowCircleRight /></NextPokemon></PokemonChange>
+            <PokemonChange><NextPokemon onClick={toNextPokemon}><HiOutlineArrowCircleRight /></NextPokemon></PokemonChange>
             <Menu />
         </PokemonPage>
     );
