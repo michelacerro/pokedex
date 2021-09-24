@@ -22,13 +22,15 @@ export const FilterBox = styled.div`
     display: none;
 
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    // width: 220px;
+    // height: 410px;
 
     background-color: #CAC7D9;
-    padding: 25px;
+    paddig: 25px;
 
     flex-direction: column;
     justify-content: center;
@@ -37,8 +39,8 @@ export const FilterBox = styled.div`
 
 export const ExitButton = styled.button`
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    left: 10px;
 
     border: none;
     background-color: transparent;
@@ -51,22 +53,24 @@ export const ExitButton = styled.button`
     }
 `;
 
-export const FilterTitle = styled.h3`
+export const FilterTitle = styled.p`
     font-family: 'Press Start 2P', cursive;
-    margin-bottom: 15px;
+    margin: 5px;
     text-align: center;
+
+    font-size: 14px;
 `;
 
 export const FilterForm = styled.form`
     display: flex;
     align-items: center;
-    margin-bottom: 7vh;
+    margin-bottom: 40px;
 `;
 
 export const FilterInput = styled.input`
-    min-width: 200px;
-    max-width: 700px;
-    width: 80vw;
+    // min-width: 200px;
+    // max-width: 280px;
+    // width: 80vw;
     height: 2em;
 
     border: none;
@@ -99,8 +103,8 @@ export const InputButton = styled.button`
 `; 
 
 export const FilterTypes = styled.div`
-    min-width: 300px;
-    max-width: 700px;
+    min-width: 250px;
+    max-width: 320px;
 `;
 
 export const FilterButton = styled.button`
@@ -109,7 +113,7 @@ export const FilterButton = styled.button`
     color: inherit;
     font-size: 14px;
     text-decoration: underline;
-    margin-top: 25px;
+    margin-top: 15px;
 
     &:hover {
         cursor: pointer;

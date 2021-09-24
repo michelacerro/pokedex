@@ -29,7 +29,7 @@ const Menu = () => {
                     <MdMoreHoriz />
                     <MenuLink to='/pokedex'>Pokédex</MenuLink>
                     <MdMoreHoriz />
-                    <MenuLink to='my-team'>My Team</MenuLink>
+                    <MenuLink to='/my-team'>My Team</MenuLink>
                 </MenuBox>
         </>
     );

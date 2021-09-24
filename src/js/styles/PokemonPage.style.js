@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const PokemonPage = styled.div`
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -12,13 +12,18 @@ export const PokemonPage = styled.div`
 `;
 
 export const PokemonCard = styled.div`
-    display: flex;
-    align-items: flex-end;
     width: 100%;
+
+    @media only screen and (min-width: 800px) {
+        display: flex;
+        align-items: flex-end;
+    }
 `;
 
 export const PokemonColumn = styled.div`
-    width: 50%;
+    width: 100%;
+
+    @media only screen and (min-width: 800px) {width: 50%;}
 `;
 
 export const PokemonData = styled.div`
@@ -89,13 +94,13 @@ export const PokemonChange = styled.div`
 `;
 
 export const PreviousPokemon = styled.button`
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 10px;
 
     border: none;
     background-color: transparent;
-    font-size: 50px;
+    font-size: 30px;
     color: #3F61A6;
 
     &:hover {
@@ -105,13 +110,13 @@ export const PreviousPokemon = styled.button`
 `;
 
 export const NextPokemon = styled.button`
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 10px;
 
     border: none;
     background-color: transparent;
-    font-size: 50px;
+    font-size: 30px;
     color: #3F61A6;
 
     &:hover {

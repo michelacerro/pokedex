@@ -20,29 +20,29 @@ export const HomeTextBox = styled.div`
 `;
 
 export const HomeTitle = styled.h1`
-    font-size: 9vw;
+    font-size: 11vw;
     font-family: 'Press Start 2P', cursive;
     color: #F2B705;
     text-shadow: 1vw 1vw #3F61A6, -1vw 1vw #3F61A6, -1vw -1vw #3F61A6, 1vw -1vw #3F61A6,
                 1vw 0vw #3F61A6, -1vw 0vw #3F61A6, 0vw 1vw #3F61A6, 0vw -1vw #3F61A6;
+
+    @media only screen and (min-width: 800px) {font-size: 9vw;}
 `;
 
 export const HomeLink = styled(Link)`
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
-    font-size: 3vw;
+    font-size: 12px;
     color: #4F4C59;
     padding-right: 1vw;
 
-    span {
-        color: #3F61A6;
-    }
-    span:hover {
-        color: #F2B705;
-    }
+    span {color: #3F61A6;}
+    span:hover {color: #F2B705;}
 
     animation: show 5s step-end;
     @keyframes show {
         0% {opacity: 0%;} 100% {opacity: 100%;}
     }
+
+    @media only screen and (min-width: 800px) {font-size: 3vw;}
 `;

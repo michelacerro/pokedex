@@ -29,8 +29,8 @@ export const MenuBox = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     border-radius: 20px;
     background-color: #F2B705;
     border: 4px solid #3F61a6; 
