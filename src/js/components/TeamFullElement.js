@@ -26,7 +26,7 @@ const TeamFullElement = (props) => {
         <TeamElement>
             <ImageBox><PokemonImage src={props.data.image} alt={props.data.name} /></ImageBox>
             <Identifiers id={props.data.id} name={props.data.name} />
-            <DeleteButton onClick={outMyTeam}><FiMinus /> <span id={props.data.id}>Delete from my Team</span></DeleteButton>
+            <DeleteButton onClick={outMyTeam}><FiMinus /> <span id={props.data.id}>Deposit</span></DeleteButton>
         </TeamElement>
     );
 };

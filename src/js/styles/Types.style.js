@@ -32,7 +32,7 @@ export const Type = styled.button`
     min-height: 30px;
     min-width: 30px;
 
-    margin: 5px;
+    margin: 3px;
     padding: 10px;
     color: #ffffff;
     text-transform: capitalize;
@@ -43,4 +43,6 @@ export const Type = styled.button`
     &:focus {
         font-weight: bold;
     }
+
+    @media only screen and (min-width: 401px) {margin: 5px;}
 `;

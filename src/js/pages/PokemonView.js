@@ -30,7 +30,7 @@ const PokemonView = () => {
     const history = useHistory();
 
     const inMyTeam = () => {
-        if (teamState.length >= 6) {alert('hai già sceleto tutti i pokemon')}
+        if (teamState.length >= 6) {alert("You can't withdraw other Pokémon. First you have to deposit some.")}
         else {
             dispatch(addTeam({
                 id: elementState.id.toString(),
@@ -99,7 +99,7 @@ const PokemonView = () => {
                     <PokemonData>
                         <PokemonImage src={elementState.sprites.other.dream_world.front_default} alt={elementState.name} />
                         <Identifiers id={elementState.id.toString()} name={elementState.name} />
-                        <AddButton onClick={inMyTeam}><FiPlus /> <span>Add to my Team</span></AddButton>
+                        <AddButton onClick={inMyTeam}><FiPlus /> <span>Withdraw</span></AddButton>
                     </PokemonData>
                     
                     {/* INFO */}

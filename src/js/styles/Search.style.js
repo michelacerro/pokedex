@@ -26,11 +26,9 @@ export const FilterBox = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
 
-    // width: 220px;
-    // height: 410px;
-
+    width: 100%;
+    height: 100%;
     background-color: #CAC7D9;
-    paddig: 25px;
 
     flex-direction: column;
     justify-content: center;
@@ -38,7 +36,7 @@ export const FilterBox = styled.div`
 `;
 
 export const ExitButton = styled.button`
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
 
@@ -55,22 +53,29 @@ export const ExitButton = styled.button`
 
 export const FilterTitle = styled.p`
     font-family: 'Press Start 2P', cursive;
-    margin: 5px;
     text-align: center;
+    font-size: 12px;
 
-    font-size: 14px;
-`;
+    @media only screen and (min-width: 401px) and (max-width: 900px) {
+        font-size: 17px;
+        margin: 5px;
+    }
+    @media only screen and (min-width: 901px) {font-size: 20px;}
+    `;
 
 export const FilterForm = styled.form`
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+
+    transform: scale(0.9, 0.9);
+
+    @media only screen and (min-width: 800px) {margin-bottom: 40px;}
 `;
 
 export const FilterInput = styled.input`
-    // min-width: 200px;
-    // max-width: 280px;
-    // width: 80vw;
+    width: 80vw;
+    max-width: 600px;
     height: 2em;
 
     border: none;
@@ -104,7 +109,10 @@ export const InputButton = styled.button`
 
 export const FilterTypes = styled.div`
     min-width: 250px;
-    max-width: 320px;
+    max-width: 600px;
+    width: 90vw;
+
+    transform: scale(0.9, 0.9);
 `;
 
 export const FilterButton = styled.button`

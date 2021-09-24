@@ -9,7 +9,7 @@ export const PreviewLink = styled(Link)`
 `;
 
 export const PreviewBox = styled.div`
-    width: 220px;
+    width: 200px;
     background-color: #f2f2f2;
     border-radius: 10px;
     margin: 10px;
@@ -19,9 +19,8 @@ export const PreviewBox = styled.div`
     flex-direction: column;
     align-items: center;
 
-    &:hover {
-        transform: scale(1.05, 1.05);
-    }
+    &:hover {transform: scale(1.05, 1.05);}
+
 `;
 
 export const PreviewImage = styled.img`
