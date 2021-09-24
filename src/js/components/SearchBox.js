@@ -19,7 +19,7 @@ const SearchBox = () => {
     const dispatch = useDispatch();
 
 
-    // create list for type box
+    // ----- create list for type box
     const [typeList, setTypeList] = useState([]);
     useEffect(() => {
         async function typeData () {
@@ -31,7 +31,7 @@ const SearchBox = () => {
     }, []);
     
 
-    // open/close filters box
+    // ----- open/close filters box
     const openFilters = () => {
         dispatch(openFilter(true));
         document.querySelector('#filter-box').style.display = 'flex';
@@ -43,7 +43,7 @@ const SearchBox = () => {
     };
 
 
-    // add/remove search filters
+    // ----- add/remove search filters
     const listState = useSelector(state => state.listReducer.pokemon);
 
     const [text, setText] = useState('');
@@ -111,14 +111,14 @@ const SearchBox = () => {
                 {/* INPUT */}
                 <FilterTitle>Search for name</FilterTitle>
                 <FilterForm onSubmit={searchForText}>
-                    <FilterInput type='text' onChange={(e) => setText(e.target.value)} />
+                    <FilterInput type='text' value={text} onChange={(e) => setText(e.target.value)} />
                     <InputButton><FiSearch /></InputButton>
                 </FilterForm>
 
                 {/* TYPES FILTER */}
                 <FilterTitle>Search for type</FilterTitle>
                 <FilterTypes>
-                    <TypeBox>
+                    <TypeBox justify={'center'}>
                         {typeList.map(type => <Type key={type.name} type={type.name} onClick={searchForType}>{type.name}</Type>)} 
                     </TypeBox>
                 </FilterTypes>

@@ -3,23 +3,17 @@ import styled from 'styled-components';
 
 export const TeamPage = styled.div`
     width: 100vw;
-    height: 100vh;
-
-    background-color: #f2f2f2;
-`;
-
-export const TeamSpace = styled.div`
-    width: 100%;
-    height: 100%;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: #f2f2f2;
 `;
 
 export const TeamBox = styled.div`
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -27,6 +21,7 @@ export const TeamBox = styled.div`
 
 export const TeamElement = styled.div`
     width: 190px;
+    height: 230px;
     margin: 25px 10px;
     padding: 5px;
 

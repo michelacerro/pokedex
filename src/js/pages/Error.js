@@ -30,7 +30,7 @@ const Error = () => {
                 <ErrorTextBox>
                     <div><ErrorTyping1><ErrorText>Page not found.</ErrorText></ErrorTyping1></div>
                     <div><ErrorTyping2><ErrorText>
-                            <HiArrowNarrowRight /> Return to <ErrorLink to='/pokedex'>Pokédex</ErrorLink>.
+                            <HiArrowNarrowRight /> Return to <ErrorLink to='/'>Home</ErrorLink>.
                     </ErrorText></ErrorTyping2></div>
                 </ErrorTextBox>
                 <ErrorImage src={image} alt='' />

@@ -1,13 +1,15 @@
 //  Dependencies
 import React from 'react';
 
+// Styles
+import {IdentifierComponent} from '../styles/IdentifierComponent.style';
 
 const Identifiers = (props) => {
     return (
-        <div>
+        <IdentifierComponent>
             <h5># {props.id.length === 1 ? ('00' + props.id) : (props.id.length === 2 ? ('0' + props.id) : props.id)}</h5>
             <h2>{props.name}</h2>
-        </div>
+        </IdentifierComponent>
     );
 };
 export default Identifiers;

@@ -54,6 +54,7 @@ export const ExitButton = styled.button`
 export const FilterTitle = styled.h3`
     font-family: 'Press Start 2P', cursive;
     margin-bottom: 15px;
+    text-align: center;
 `;
 
 export const FilterForm = styled.form`
@@ -63,7 +64,7 @@ export const FilterForm = styled.form`
 `;
 
 export const FilterInput = styled.input`
-    min-width: 300px;
+    min-width: 200px;
     max-width: 700px;
     width: 80vw;
     height: 2em;
@@ -99,7 +100,7 @@ export const InputButton = styled.button`
 
 export const FilterTypes = styled.div`
     min-width: 300px;
-    max-width: 800px;
+    max-width: 700px;
 `;
 
 export const FilterButton = styled.button`

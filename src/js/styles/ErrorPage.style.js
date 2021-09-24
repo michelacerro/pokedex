@@ -69,7 +69,7 @@ export const ErrorTyping2 = styled.div`
         
     animation:
         show 2.5s step-end,
-        typing 2.4s steps(20, end) 2.5s,
+        typing 2.4s steps(17, end) 2.5s,
         blink-border .5s step-end infinite;
 
     @keyframes show {

@@ -18,6 +18,7 @@ const Pokedex = () => {
     const typeState = useSelector(state => state.typeReducer.pokemon);
     const filterState = useSelector(state => state.filterReducer.state);
 
+    
     return (
         <PokedexPage>
             <MainBox>

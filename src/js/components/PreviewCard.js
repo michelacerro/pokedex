@@ -1,6 +1,6 @@
 // Dependencies
 import React, {useState, useEffect} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 // Icons
 import {CgPokemon} from 'react-icons/cg';
@@ -12,32 +12,46 @@ import {PreviewLink, PreviewBox, PreviewImage, PreviewInfo, PreviewBalls} from '
 // Components
 import Identifiers from './Identifiers';
 
+// Actions
+import {addElement, deleteElement} from '../actions';
+
 
 const PreviewCard = (props) => {
-    const teamList = useSelector(state => state.teamReducer.pokemon);
+    const pokemonData = props.data;
+
+    // ----- check for pokemon in team
+    const teamState = useSelector(state => state.teamReducer.pokemon);
     const [team, setTeam] = useState([]);
 
     useEffect(() => {
-        setTeam(teamList.map(teamElement => teamElement.id));
-    }, [teamList]);
+        setTeam(teamState.map(teamElement => teamElement.id));
+    }, [teamState]);
+
+    // ----- save pokemon data
+    const dispatch = useDispatch();
+    const savePokemon = () => {
+        dispatch(deleteElement());
+        dispatch(addElement(pokemonData));
+    }
+
 
     return (
-        <PreviewLink to={`/pokemon/${props.data.name}`} >
-            <PreviewBox>
-                <PreviewImage src={props.data.sprites.other.dream_world.front_default} alt={props.data.name} />
+        <PreviewLink to={`/pokemon/${pokemonData.name}`} >
+            <PreviewBox onClick={savePokemon}>
+                <PreviewImage src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
                 <PreviewInfo>
-                    <Identifiers id={props.data.id.toString()} name={props.data.name} />
+                    <Identifiers id={pokemonData.id.toString()} name={pokemonData.name} />
                     <br />
                     <PreviewBalls>
                         <TypeBox>
-                            {props.data.types ? 
-                                props.data.types.map(type => (
+                            {pokemonData.types ? 
+                                pokemonData.types.map(type => (
                                     <Type key={type.type.name} type={type.type.name} />
                                 ))
                                 : <div></div>
                             }
                         </TypeBox>
-                        {team.includes(props.data.id.toString()) ? <CgPokemon /> : <div></div> }
+                        {team.includes(pokemonData.id.toString()) ? <CgPokemon /> : <div></div> }
                     </PreviewBalls>
                 </PreviewInfo>
             </PreviewBox>

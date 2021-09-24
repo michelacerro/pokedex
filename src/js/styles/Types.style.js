@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const TypeBox = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: ${props => props.justify};
 `;
 
 export const Type = styled.button`

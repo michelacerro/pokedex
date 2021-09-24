@@ -10,7 +10,7 @@ import {HiMinus, HiArrowNarrowRight} from 'react-icons/hi';
 import {HomePage, HomeTextBox, HomeTitle, HomeLink} from '../styles/HomePage.style';
 
 // Actions
-import {createList, deleteList} from '../actions';
+import {createList, deleteList, deleteText, deleteWarning, deleteType} from '../actions';
 
 // Components
 import AnimatedPokeball from '../components/AnimatedPokeball';
@@ -19,6 +19,9 @@ import AnimatedPokeball from '../components/AnimatedPokeball';
 const Home = () => {
     const dispatch = useDispatch();
     dispatch(deleteList());
+    dispatch(deleteText());
+    dispatch(deleteWarning());
+    dispatch(deleteType());
 
     const [pokemonList, setPokemonList] = useState([]);
     useEffect(() => {

@@ -57,18 +57,32 @@ export const deleteType = () => {
     }
 }
 
-
-// teamReducer
-export const addPokemon = (object) => {
+// elementReducer
+export const addElement = (object) => {
     return {
-        type: 'ADD_POKEMON',
+        type: 'ADD_ELEMENT',
         data: object
     }
 }
 
-export const deletePokemon = (string) => {
+export const deleteElement = () => {
     return {
-        type: 'DELETE_POKEMON',
+        type: 'DELETE_ELEMENT'
+    }
+}
+
+
+// teamReducer
+export const addTeam = (object) => {
+    return {
+        type: 'ADD_TEAM',
+        data: object
+    }
+}
+
+export const deleteTeam = (string) => {
+    return {
+        type: 'DELETE_TEAM',
         id: string
     }
 }

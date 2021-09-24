@@ -3,7 +3,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 // Styels
-import {TeamPage, TeamSpace, TeamBox} from '../styles/TeamPage.style';
+import {TeamPage, TeamBox} from '../styles/TeamPage.style';
 
 // Components
 import Menu from '../components/Menu';
@@ -16,7 +16,7 @@ const MyTeam = () => {
 
     return (
         <TeamPage>
-            <TeamSpace>
+            {/* <TeamSpace> */}
                 {teamList.length === 0 ? 
                     <TeamBox>
                         <TeamEmptyElement /> 
@@ -29,52 +29,52 @@ const MyTeam = () => {
                     : ( 
                     teamList.length === 1 ?
                         <TeamBox>
-                            <TeamEmptyElement /> 
-                            <TeamEmptyElement /> 
-                            <TeamEmptyElement /> 
-                            <TeamEmptyElement /> 
-                            <TeamEmptyElement /> 
                             {teamList.map(team => (
                                 <TeamFullElement key={team.id} data={team} />
                             ))}
+                            <TeamEmptyElement /> 
+                            <TeamEmptyElement /> 
+                            <TeamEmptyElement /> 
+                            <TeamEmptyElement /> 
+                            <TeamEmptyElement />
                         </TeamBox>
                         : ( 
                         teamList.length === 2 ?
-                            <TeamBox>
-                                <TeamEmptyElement /> 
-                                <TeamEmptyElement /> 
-                                <TeamEmptyElement /> 
-                                <TeamEmptyElement /> 
+                            <TeamBox> 
                                 {teamList.map(team => (
                                     <TeamFullElement key={team.id} data={team} />
                                 ))}
+                                <TeamEmptyElement /> 
+                                <TeamEmptyElement /> 
+                                <TeamEmptyElement /> 
+                                <TeamEmptyElement />
                             </TeamBox>
                             : (
                             teamList.length === 3 ?
                                 <TeamBox>
-                                    <TeamEmptyElement /> 
-                                    <TeamEmptyElement /> 
-                                    <TeamEmptyElement /> 
                                     {teamList.map(team => (
                                         <TeamFullElement key={team.id} data={team} />
                                     ))}
+                                    <TeamEmptyElement /> 
+                                    <TeamEmptyElement /> 
+                                    <TeamEmptyElement />
                                 </TeamBox>
                                 : (
                                 teamList.length === 4 ?
-                                    <TeamBox>
-                                        <TeamEmptyElement /> 
-                                        <TeamEmptyElement /> 
+                                    <TeamBox> 
                                         {teamList.map(team => (
                                             <TeamFullElement key={team.id} data={team} />
                                         ))}
+                                        <TeamEmptyElement /> 
+                                        <TeamEmptyElement />
                                     </TeamBox>
                                     : (
                                     teamList.length === 5 ?
-                                        <TeamBox>
-                                            <TeamEmptyElement /> 
+                                        <TeamBox> 
                                             {teamList.map(team => (
                                                 <TeamFullElement key={team.id} data={team} />
                                             ))}
+                                            <TeamEmptyElement />
                                         </TeamBox>
                                         :
                                         <TeamBox>
@@ -88,7 +88,7 @@ const MyTeam = () => {
                         )
                     )
                 }
-            </TeamSpace>
+            {/* </TeamSpace> */}
             <Menu />
         </TeamPage>
     );

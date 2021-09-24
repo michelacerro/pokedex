@@ -8,7 +8,7 @@ import GlobalStyle from './styles/GlobalStyle.style';
 // Pages
 import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
-import PokemonCard from './pages/PokemonCard';
+import PokemonView from './pages/PokemonView';
 import MyTeam from './pages/MyTeam';
 import Error from './pages/Error';
 
@@ -19,7 +19,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/pokedex' component={Pokedex} />
-          <Route exact path='/pokemon/:name' component={PokemonCard} />
+          <Route exact path='/pokemon/:name' component={PokemonView} />
           <Route exact path='/my-team' component={MyTeam} />
           <Route component={Error} />
         </Switch>

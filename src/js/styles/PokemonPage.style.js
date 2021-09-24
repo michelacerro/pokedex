@@ -14,6 +14,7 @@ export const PokemonPage = styled.div`
 export const PokemonCard = styled.div`
     display: flex;
     align-items: flex-end;
+    width: 100%;
 `;
 
 export const PokemonColumn = styled.div`
