@@ -49,7 +49,7 @@ const Home = () => {
                 <HomeTitle>Pokémon</HomeTitle>
                 <br />
                 <br />
-                <HomeLink to='/all-pokemon'><HiMinus /><HiMinus /><HiArrowNarrowRight /> <span>Pokédex</span></HomeLink>
+                <HomeLink to='/pokemon'><HiMinus /><HiMinus /><HiArrowNarrowRight /> <span>Pokédex</span></HomeLink>
             </HomeTextBox>
             <AnimatedPokeball />
         </HomePage>

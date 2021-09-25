@@ -18,7 +18,7 @@ const App = () => {
       <Browser>
         <Switch>
           <Route exact path='/pokedex' component={Home} />
-          <Route exact path='/all-pokemon' component={Pokedex} />
+          <Route exact path='/pokemon' component={Pokedex} />
           <Route exact path='/pokemon/:name' component={PokemonView} />
           <Route exact path='/my-team' component={MyTeam} />
           <Route component={Error} />

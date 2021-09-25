@@ -93,7 +93,7 @@ const MyTeam = () => {
                 }
             {/* </TeamSpace> */}
             <Menu />
-            <ReturnLink to='/all-pokemon'><GiReturnArrow /></ReturnLink>
+            <ReturnLink to='/pokemon'><GiReturnArrow /></ReturnLink>
         </TeamPage>
     );
 };
