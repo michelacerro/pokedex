@@ -38,7 +38,7 @@ const PokemonView = () => {
                 image: elementState.sprites.other.dream_world.front_default
             }));
         }   
-        history.push('/pokedex/my-team');
+        history.push('/my-team');
     }
 
 
@@ -49,7 +49,7 @@ const PokemonView = () => {
                     dispatch(deleteElement());
                     dispatch(addElement(pokemon));
 
-                    history.push(`/pokedex/pokemon/${pokemon.name}`);
+                    history.push(`/pokemon/${pokemon.name}`);
                 };
                 return pokemon;
             }));
@@ -59,7 +59,7 @@ const PokemonView = () => {
                     dispatch(deleteElement());
                     dispatch(addElement(pokemon));
 
-                    history.push(`/pokedex/pokemon/${pokemon.name}`);
+                    history.push(`/pokemon/${pokemon.name}`);
                 };
                 return pokemon;
             }));
@@ -73,7 +73,7 @@ const PokemonView = () => {
                     dispatch(deleteElement());
                     dispatch(addElement(pokemon));
 
-                    history.push(`/pokedex/pokemon/${pokemon.name}`);
+                    history.push(`/pokemon/${pokemon.name}`);
                 };
                 return pokemon;
             }));
@@ -83,7 +83,7 @@ const PokemonView = () => {
                     dispatch(deleteElement());
                     dispatch(addElement(pokemon));
 
-                    history.push(`/pokedex/pokemon/${pokemon.name}`);;
+                    history.push(`/pokemon/${pokemon.name}`);;
                 };
                 return pokemon;
             }));

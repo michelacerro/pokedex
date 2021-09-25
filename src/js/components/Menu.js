@@ -27,9 +27,9 @@ const Menu = () => {
                 <MenuBox id='menu-box'>
                     <MenuLink to='/pokedex'>Home</MenuLink>
                     <MdMoreHoriz />
-                    <MenuLink to='/pokedex/pokedex'>Pokédex</MenuLink>
+                    <MenuLink to='/all-pokemon'>Pokédex</MenuLink>
                     <MdMoreHoriz />
-                    <MenuLink to='/pokedex/my-team'>My Team</MenuLink>
+                    <MenuLink to='/my-team'>My Team</MenuLink>
                 </MenuBox>
         </>
     );
