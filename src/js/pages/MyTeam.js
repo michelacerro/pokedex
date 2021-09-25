@@ -2,8 +2,11 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-// Styels
-import {TeamPage, TeamBox} from '../styles/TeamPage.style';
+// Icons
+import {GiReturnArrow} from 'react-icons/gi';
+
+// Styles
+import {TeamPage, TeamBox, ReturnLink} from '../styles/TeamPage.style';
 
 // Components
 import Menu from '../components/Menu';
@@ -90,6 +93,7 @@ const MyTeam = () => {
                 }
             {/* </TeamSpace> */}
             <Menu />
+            <ReturnLink to='/pokedex'><GiReturnArrow /></ReturnLink>
         </TeamPage>
     );
 };

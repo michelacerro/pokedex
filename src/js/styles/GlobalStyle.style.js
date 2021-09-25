@@ -4,17 +4,23 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     * {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        ::-webkit-scrollbar {display: none;}
+
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
     body {
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
-        ::-webkit-scrollbar {
-            display: none;
-        }
         font-family: 'Roboto', sans-serif;
         color: #4F4C59;
     }

@@ -1,5 +1,7 @@
 // Dependecies
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
 
 export const TeamPage = styled.div`
     width: 100vw;
@@ -58,6 +60,22 @@ export const DeleteButton = styled.button`
     padding-right: 1vw;
 
     span {text-decoration: underline;}
+
+    &:hover {
+        cursor: pointer;
+        color: #F2B705;
+    }
+`;
+
+export const ReturnLink = styled(Link)`
+    position: fixed;
+    top: 55px;
+    left: 10px;
+
+    border: none;
+    background-color: transparent;
+    color: #3F61A6;
+    font-size: 25px;
 
     &:hover {
         cursor: pointer;
