@@ -25,11 +25,11 @@ const Menu = () => {
                 {open ? <FiMinus /> : <FiMenu />}
             </MenuButton>
                 <MenuBox id='menu-box'>
-                    <MenuLink to='/'>Home</MenuLink>
+                    <MenuLink to='/pokedex'>Home</MenuLink>
                     <MdMoreHoriz />
-                    <MenuLink to='/pokedex'>Pokédex</MenuLink>
+                    <MenuLink to='/pokedex/pokedex'>Pokédex</MenuLink>
                     <MdMoreHoriz />
-                    <MenuLink to='/my-team'>My Team</MenuLink>
+                    <MenuLink to='/pokedex/my-team'>My Team</MenuLink>
                 </MenuBox>
         </>
     );

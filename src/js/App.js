@@ -17,10 +17,10 @@ const App = () => {
   return (
       <Browser>
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/pokedex' component={Pokedex} />
-          <Route exact path='/pokemon/:name' component={PokemonView} />
-          <Route exact path='/my-team' component={MyTeam} />
+          <Route exact path='/pokedex' component={Home} />
+          <Route exact path='/pokedex/podekex' component={Pokedex} />
+          <Route exact path='/pokedex/pokemon/:name' component={PokemonView} />
+          <Route exact path='/pokedex/my-team' component={MyTeam} />
           <Route component={Error} />
         </Switch>
         <GlobalStyle />

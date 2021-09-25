@@ -36,7 +36,7 @@ const PreviewCard = (props) => {
 
 
     return (
-        <PreviewLink to={`/pokemon/${pokemonData.name}`} >
+        <PreviewLink to={`/pokedex/pokemon/${pokemonData.name}`} >
             <PreviewBox onClick={savePokemon}>
                 <PreviewImage src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} />
                 <PreviewInfo>

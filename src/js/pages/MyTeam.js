@@ -93,7 +93,7 @@ const MyTeam = () => {
                 }
             {/* </TeamSpace> */}
             <Menu />
-            <ReturnLink to='/pokedex'><GiReturnArrow /></ReturnLink>
+            <ReturnLink to='/pokedex/pokedex'><GiReturnArrow /></ReturnLink>
         </TeamPage>
     );
 };
